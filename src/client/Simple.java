@@ -17,5 +17,4 @@ public class Simple extends CatClient {
 	public int calculReduc() {	
 		return 0;
 	}
-
 }
