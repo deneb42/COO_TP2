@@ -17,10 +17,7 @@ public class Client {
 		this.telephone = telephone;		
 	}
 	
-	
-	
-	
-	
+
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
 		
