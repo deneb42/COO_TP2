@@ -6,7 +6,7 @@ public class Adherents extends CatClient {
 	private int seuil;
 	private int rabais;
 	
-	protected Adherents(String nom, int seuil, int rabais) {
+	public Adherents(String nom, int seuil, int rabais) {
 		super(nom);
 		points = 0;
 		this.seuil = seuil;

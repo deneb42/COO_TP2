@@ -2,7 +2,7 @@ package client;
 
 public class Simple extends CatClient {
 
-	protected Simple(String nom) {
+	public Simple(String nom) {
 		super(nom);
 		
 	}

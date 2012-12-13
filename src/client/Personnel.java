@@ -6,7 +6,7 @@ public class Personnel extends CatClient {
 
 	private PromoPerso saPromo;
 	
-	protected Personnel(String nom) {
+	public Personnel(String nom) {
 		super(nom);
 		saPromo = new PromoPerso();
 	}
