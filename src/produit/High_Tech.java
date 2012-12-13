@@ -10,6 +10,6 @@ public class High_Tech extends Produit {
 	}
 	
 	public String toString() {
-		return super.toString() + specTechniques;
+		return super.toString() + "(High Tech), spécification techniques:" + specTechniques;
 	}
 }

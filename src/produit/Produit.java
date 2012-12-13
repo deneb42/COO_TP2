@@ -14,7 +14,7 @@ public abstract class Produit {
 		return "Produit n°" + idProduit + " " + nom;
 	}
 	
-	public int getIdProduit() {return idProduit; }
+	public int getIdProduit() { return idProduit; }
 	public double getPrix() { return prix; }
 	public String getNom() { return nom; }
 }
