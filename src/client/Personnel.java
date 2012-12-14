@@ -8,7 +8,7 @@ public class Personnel extends CatClient {
 	
 	public Personnel(String nom) {
 		super(nom);
-		//saPromo = new PromoPerso();
+		saPromo = new PromoPerso("perso", 1);
 	}
 	
 

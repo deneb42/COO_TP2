@@ -2,9 +2,21 @@ package promo;
 
 public class PromoProduit extends Promotion {
 
-	protected PromoProduit(String name, int id) {
+	protected int valeurReduc ;
+	
+	public PromoProduit(String name, int id, int reduc) {
 		super(name, id);
-		// TODO Auto-generated constructor stub
+		this.valeurReduc = reduc;
 	}
 
+	public int getValeurReduc() {
+		return valeurReduc;
+	}
+
+	public void setValeurReduc(int valeurReduc) {
+		this.valeurReduc = valeurReduc;
+	}
+
+	
+	
 }

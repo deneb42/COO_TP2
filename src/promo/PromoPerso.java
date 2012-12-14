@@ -1,10 +1,17 @@
 package promo;
 
+import produit.*;
+
 public class PromoPerso extends Promotion {
 
-	protected PromoPerso(String name, int id) {
+	public PromoPerso(String name, int id) {
 		super(name, id);
-		// TODO Auto-generated constructor stub
+	}
+	
+	public int calculerReduc(Produit p){
+		//Todo
+		return 0;
+		
 	}
 
 }
