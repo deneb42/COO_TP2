@@ -4,11 +4,13 @@ public abstract class Produit {
 	protected int idProduit;
 	protected float prix;
 	protected String nom;
+	protected int nbFidelite;
 	
-	protected Produit(int id, float p, String n) {
+	protected Produit(int id, float p, String n, int nf) {
 		idProduit=id;
 		prix = p;
 		nom=n;
+		nbFidelite=nf;
 	}
 	
 	public String toString() {
