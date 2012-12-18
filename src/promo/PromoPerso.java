@@ -12,8 +12,7 @@ public class PromoPerso extends Promotion {
 
 	@Override
 	public float calculerReduc() {
-		reduction*pdt.getPrix();
-		return 0;
+		return reduction * pdt.getPrix();
 	}
 
 }

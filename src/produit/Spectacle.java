@@ -6,8 +6,8 @@ public class Spectacle extends Produit {
 	private Date date;
 	private String lieu;
 	
-	public Spectacle(int id, String n, Date d, String l) {
-		super(id, n);
+	public Spectacle(int id, float p, String n, Date d, String l) {
+		super(id, p, n);
 		date = d;
 		lieu=l;
 	}

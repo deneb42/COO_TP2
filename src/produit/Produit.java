@@ -5,8 +5,9 @@ public abstract class Produit {
 	protected float prix;
 	protected String nom;
 	
-	protected Produit(int id, String n) {
+	protected Produit(int id, float p, String n) {
 		idProduit=id;
+		prix = p;
 		nom=n;
 	}
 	
