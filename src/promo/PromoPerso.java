@@ -16,4 +16,10 @@ public class PromoPerso extends Promotion {
 		
 	}
 
+	@Override
+	public int calculerReduc() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

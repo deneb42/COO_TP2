@@ -1,16 +1,12 @@
 package test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import produit.*;
-
-import courses.*;
-import client.*;
 import exceptions.ProduitNExistePasException;
 
 public class TestGeneral {
-	private static HashMap<Client, Panier> listClient; //Client est unique donc peut être la clé de la hashmap
+	//private static HashMap<Client, Panier> listClient; //Client est unique donc peut être la clé de la hashmap
 	private static ArrayList<Produit> listProduit;
 	
 	
@@ -30,7 +26,7 @@ public class TestGeneral {
 	}
 	
 	public static void main(String[] args){
-		listClient = new HashMap<Client, Panier>();
+		//listClient = new HashMap<Client, Panier>();
 		listProduit = new ArrayList<Produit>();
 		
 		listProduit.add(new CD(1, "Bobby Lapointe Live", "Bobby Lapointe"));
@@ -39,6 +35,7 @@ public class TestGeneral {
 		
 		try{
 			Produit produit = TestGeneral.getProduit("toto");
+			System.out.println(produit.toString());
 		} catch (ProduitNExistePasException e) {
 				System.err.println(e.getMessage());
 		}

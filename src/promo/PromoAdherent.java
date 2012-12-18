@@ -7,6 +7,12 @@ public class PromoAdherent extends Promotion {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public int calculerReduc() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	
 
 }

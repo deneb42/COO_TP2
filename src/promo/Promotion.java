@@ -1,9 +1,9 @@
 package promo;
 
-public class Promotion {
-	private int id;
-	private String nom;
-	private float reduction;
+public abstract class Promotion {
+	protected int id;
+	protected String nom;
+	protected float reduction;
 	
 	protected Promotion(String name, int id, float red) {
 		this.nom = name;
@@ -12,9 +12,5 @@ public class Promotion {
 		
 	}
 	
-	public int calculerReduc(){
-		//ToDo
-		
-		return 0;
-	}
+	public abstract int calculerReduc();
 }
