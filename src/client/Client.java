@@ -22,6 +22,9 @@ public class Client {
 		sonPanier = new Panier();
 	}
 	
+	public void connexion(){
+		//ToDo
+	}
 
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
@@ -43,89 +46,22 @@ public class Client {
 		return msg.toString();
 	}
 	
-	
-	
-	
-	public void connexion(){
-		//ToDo
-	}
-
 	/* ***********************************
 	 * Getter & Setter	
 	 ************************************/
+	public void setNom(String nom) { this.nom = nom; }
+	public void setPrenom(String prenom) { this.prenom = prenom; }
+	public void setEmail(String email) { this.email = email; }
+	public void setTelephone(String telephone) { this.telephone = telephone; }
+	public void setId(int id) { this.id = id; }
+	public void setCategorie(CatClient categorie) { this.categorie = categorie; }
+	public void setSonPanier(Panier sonPanier) { this.sonPanier = sonPanier; }
 	
-	public String getNom() {
-		return nom;
-	}
-
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-
-	public String getPrenom() {
-		return prenom;
-	}
-
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getTelephone() {
-		return telephone;
-	}
-
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-
-
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-	public CatClient getCategorie() {
-		return categorie;
-	}
-
-
-	public void setCategorie(CatClient categorie) {
-		this.categorie = categorie;
-	}
-
-
-	public Panier getSonPanier() {
-		return sonPanier;
-	}
-
-
-	public void setSonPanier(Panier sonPanier) {
-		this.sonPanier = sonPanier;
-	}
-	
-
-	
-	
-	
-	
+	public String getNom() { return nom; }
+	public String getPrenom() {	return prenom; }
+	public String getEmail() { return email; }
+	public String getTelephone() { return telephone; }
+	public int getId() { return id; }
+	public CatClient getCategorie() { return categorie; }
+	public Panier getSonPanier() { return sonPanier; }
 }
