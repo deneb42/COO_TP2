@@ -10,7 +10,7 @@ import client.Client;
 import client.Simple;
 import exceptions.NoArticleException;
 
-public class TestPanier {
+public class TestPanier { // deprecated
 
 	public static void main(String[] args) {
 		

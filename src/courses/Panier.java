@@ -1,11 +1,9 @@
 package courses;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
-import exceptions.NoArticleException;
-
 import produit.Produit;
+import exceptions.NoArticleException;
 
 public class Panier {
 	

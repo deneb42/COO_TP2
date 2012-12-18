@@ -11,7 +11,15 @@ import produit.Spectacle;
 
 public class TestProduit {
 
-	public static void main(String[] args) {
+	public static void main(String args[]) {
+		ArrayList<Produit> p = populeProduits();
+		
+		for(Produit pitiP:p) {
+			System.out.println(pitiP.toString());
+		}
+	}
+	
+	public static ArrayList<Produit> populeProduits() {
 		ArrayList<Produit> p = new ArrayList<Produit>();
 		
 		p.add(new CD(1, 22.5f,"Bobby Lapointe Tour 88", "Bobby Lapointe"));
@@ -20,10 +28,11 @@ public class TestProduit {
 		//p.add(new Produit(4, "test non concluant"));
 		p.add(new Spectacle(5, 15.00f, "Tri Yann en concert", new GregorianCalendar(2012, 11, 21, 21,12).getTime(), "Paris"));
 		p.add(new Livre(6, 5.99f, "Le livre de la jungle", "S carr", "un joli compte pour enfant"));
+		p.add(new CD(1, 22.50f, "Bobby Lapointe Live", "Bobby Lapointe"));
+		p.add(new High_Tech(2, 1099.00f,"MacBook Pro 13", "intel Core 2 Duo, RAm : 8Go"));
+		p.add(new Livre(3, 19.99f, "L'informatique pour les nuls", "Les Nuls", "Vous ne comprenez rien à l'informatique ? Ce livre est fait pour vous."));
 		
-		for(Produit pitiP:p) {
-			System.out.println(pitiP.toString());
-		}
+		return p;
 	}
 
 }
