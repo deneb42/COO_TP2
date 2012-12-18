@@ -67,7 +67,7 @@ public class Panier {
 			msg.append(contenuPanier.get(p));			
 			msg.append("\n");
 		}
-		msg.append("Montant total du panier :");
+		msg.append("\n-----\nMontant total du panier :");
 		msg.append(montantTotal);
 		msg.append("\nMontant des reductions : ");
 		msg.append(totalReducPanier);
