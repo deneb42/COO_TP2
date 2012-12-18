@@ -3,25 +3,25 @@ package courses;
 import java.util.HashMap;
 
 import produit.Produit;
+import promo.Promotion;
+import client.Client;
 import exceptions.NoArticleException;
 
 public class Panier {
-	
+	private Client sonClient;
 	private HashMap<Produit, Integer> contenuPanier; //produit et quantité.
 	private float montantTotal;
 	private float totalReducPanier;
 	
-	public Panier() {
+	public Panier(Client c) {
+		sonClient = c;
 		contenuPanier = new HashMap<Produit, Integer>();
 		montantTotal = 0;
 		totalReducPanier = 0;
 	}
-	
-	public Panier (Produit p){
-		contenuPanier = new HashMap<Produit, Integer>();
-		contenuPanier.put(p, 1);
-		montantTotal = p.getPrix();
-		totalReducPanier = 0;
+	public Panier (Client c, Produit p){
+		this(c);
+		ajouterProduit(p);
 	}
 	
 	public void ajouterProduit(Produit p){
@@ -88,34 +88,25 @@ public class Panier {
 		return totalPt;
 	}
 	
+	public float calculReduc() {
+		float reduc = sonClient.getCategorie().calculReduc(this); // calcul des promos liées a la catégorie du client (personnel, adhérent)
+		
+		for(Produit p:contenuPanier.keySet()) { // calcul des promos de produit
+			for(Promotion promo: p.getPromos()) {
+				reduc+=promo.calculerReduc();
+			}
+		}
+		
+		return reduc;
+	}
+	
 	/* ******************************
 	 * Getter et Setter
 	 ****************************** */
-	
-	public HashMap<Produit, Integer> getContenuPanier() {
-		return contenuPanier;
-	}
-
-	public void setContenuPanier(HashMap<Produit, Integer> contenuPanier) {
-		this.contenuPanier = contenuPanier;
-	}
-
-	public float getMontantTotal() {
-		return montantTotal;
-	}
-
-	public void setMontantTotal(float montantTotal) {
-		this.montantTotal = montantTotal;
-	}
-
-	public float getTotalReducPanier() {
-		return totalReducPanier;
-	}
-
-	public void setTotalReducPanier(float totalReducPanier) {
-		this.totalReducPanier = totalReducPanier;
-	}
-	
-	
-	
+	public void setContenuPanier(HashMap<Produit, Integer> contenuPanier) { this.contenuPanier = contenuPanier; }
+	public void setMontantTotal(float montantTotal) { this.montantTotal = montantTotal; }
+	public void setTotalReducPanier(float totalReducPanier) { this.totalReducPanier = totalReducPanier; }
+	public HashMap<Produit, Integer> getContenuPanier() { return contenuPanier; }
+	public float getMontantTotal() { return montantTotal; }
+	public float getTotalReducPanier() { return totalReducPanier; }
 }
