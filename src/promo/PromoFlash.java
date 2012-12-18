@@ -2,9 +2,12 @@ package promo;
 
 public class PromoFlash extends Promotion {
 
-	public PromoFlash(String name, int id) {
-		super(name, id);
+	protected PromoFlash(String name, int id, float red) {
+		super(name, id, red);
+		// TODO Auto-generated constructor stub
 	}
+
+	
 	
 	
 

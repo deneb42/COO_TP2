@@ -2,8 +2,11 @@ package promo;
 
 public class PromoAdherent extends Promotion {
 
-	protected PromoAdherent(String name, int id) {
-		super(name, id);
+	public PromoAdherent(String name, int id, float red) {
+		super(name, id, red);
+		// TODO Auto-generated constructor stub
 	}
+
+	
 
 }

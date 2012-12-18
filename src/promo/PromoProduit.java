@@ -2,20 +2,20 @@ package promo;
 
 public class PromoProduit extends Promotion {
 
-	protected int valeurReduc ;
+	//protected float valeurReduc ;
 	
-	public PromoProduit(String name, int id, int reduc) {
-		super(name, id);
-		this.valeurReduc = reduc;
+	public PromoProduit(String name, int id, float reduc) {
+		super(name, id, reduc);
+		//this.valeurReduc = reduc;
 	}
 
-	public int getValeurReduc() {
+	/*public int getValeurReduc() {
 		return valeurReduc;
 	}
 
 	public void setValeurReduc(int valeurReduc) {
 		this.valeurReduc = valeurReduc;
-	}
+	}*/
 
 	
 	
