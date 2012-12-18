@@ -2,7 +2,7 @@ package produit;
 
 public abstract class Produit {
 	protected int idProduit;
-	protected double prix;
+	protected float prix;
 	protected String nom;
 	
 	protected Produit(int id, String n) {
@@ -15,6 +15,6 @@ public abstract class Produit {
 	}
 	
 	public int getIdProduit() { return idProduit; }
-	public double getPrix() { return prix; }
+	public float getPrix() { return prix; }
 	public String getNom() { return nom; }
 }

@@ -1,5 +1,7 @@
 package client;
 
+import courses.Panier;
+
 public class Client {
 
 	private String nom;
@@ -7,14 +9,16 @@ public class Client {
 	private String email;
 	private String telephone;
 	private int id;
-	CatClient categorie;
+	private CatClient categorie;
+	private Panier sonPanier;
 	
 	public Client(String nom, String prenom, String email, String telephone, int id, CatClient cat) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.categorie = cat;
-		this.telephone = telephone;		
+		this.telephone = telephone;	
+		sonPanier = new Panier();
 	}
 	
 
@@ -39,7 +43,88 @@ public class Client {
 	}
 	
 	
+	
+	
 	public void connexion(){
 		//ToDo
 	}
+
+	/* ***********************************
+	 * Getter & Setter	
+	 ************************************/
+	
+	public String getNom() {
+		return nom;
+	}
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public CatClient getCategorie() {
+		return categorie;
+	}
+
+
+	public void setCategorie(CatClient categorie) {
+		this.categorie = categorie;
+	}
+
+
+	public Panier getSonPanier() {
+		return sonPanier;
+	}
+
+
+	public void setSonPanier(Panier sonPanier) {
+		this.sonPanier = sonPanier;
+	}
+	
+
+	
+	
+	
+	
 }
