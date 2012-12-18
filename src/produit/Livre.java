@@ -3,8 +3,8 @@ package produit;
 public class Livre extends Produit {
 	private String auteur, resume;
 	
-	public Livre(int id, String n, String a, String r) {
-		super(id, n);
+	public Livre(int id, float p, String n, String a, String r) {
+		super(id, p, n);
 		auteur=a;
 		resume=r;
 	}

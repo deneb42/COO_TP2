@@ -3,8 +3,8 @@ package produit;
 public class CD extends Produit {
 	String artiste;
 	
-	public CD(int id, String n, String a) {
-		super(id, n);
+	public CD(int id, float p, String n, String a) {
+		super(id, p, n);
 		artiste=a;
 	}
 	

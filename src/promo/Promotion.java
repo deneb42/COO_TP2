@@ -12,5 +12,5 @@ public abstract class Promotion {
 		
 	}
 	
-	public abstract int calculerReduc();
+	public abstract float calculerReduc();
 }
