@@ -42,6 +42,10 @@ public class TestPanier {
 		}
 		System.out.println(c1.getSonPanier().toString());
 		
+		System.out.println("calcul points Panier : " + c1.getSonPanier().calculGainPoint()+"\n");
+		
+		
+		
 		System.out.println("suppression de p3 inexistant dans le panier");
 		try {
 			c1.getSonPanier().retirerProduit(p3);
