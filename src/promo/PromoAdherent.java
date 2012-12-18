@@ -8,7 +8,7 @@ public class PromoAdherent extends Promotion {
 	}
 
 	@Override
-	public int calculerReduc() {
+	public float calculerReduc() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

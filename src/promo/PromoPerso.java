@@ -3,22 +3,16 @@ package promo;
 import produit.*;
 
 public class PromoPerso extends Promotion {
-
+	Produit pdt;
 	
-	public PromoPerso(String name, int id, float red) {
+	public PromoPerso(String name, int id, float red, Produit p) {
 		super(name, id, red);
-		// TODO Auto-generated constructor stub
-	}
-
-	public int calculerReduc(Produit p){
-		//Todo
-		return 0;
-		
+		pdt = p;
 	}
 
 	@Override
-	public int calculerReduc() {
-		// TODO Auto-generated method stub
+	public float calculerReduc() {
+		reduction*pdt.getPrix();
 		return 0;
 	}
 

@@ -1,16 +1,21 @@
 package promo;
 
+import java.util.ArrayList;
+
+import produit.Produit;
+
 public class PromoFlash extends Promotion {
 
-	protected PromoFlash(String name, int id, float red) {
+	ArrayList<Produit> pdtsCible;
+	
+	protected PromoFlash(String name, int id, float red, ArrayList<Produit> p) {
 		super(name, id, red);
-		// TODO Auto-generated constructor stub
+		pdtsCible = new ArrayList<Produit>(p);
 	}
 
 	@Override
-	public int calculerReduc() {
-		// TODO Auto-generated method stub
-		return 0;
+	public float calculerReduc() {
+		return reduction;
 	}
 
 	

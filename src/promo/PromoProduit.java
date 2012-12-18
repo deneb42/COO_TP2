@@ -10,7 +10,7 @@ public class PromoProduit extends Promotion {
 	}
 
 	@Override
-	public int calculerReduc() {
+	public float calculerReduc() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
