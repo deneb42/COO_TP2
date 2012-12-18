@@ -20,4 +20,5 @@ public abstract class Produit {
 	public int getIdProduit() { return idProduit; }
 	public float getPrix() { return prix; }
 	public String getNom() { return nom; }
+	public int getNbFidelite() { return nbFidelite; }
 }

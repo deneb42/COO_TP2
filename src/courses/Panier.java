@@ -82,6 +82,14 @@ public class Panier {
 		totalReducPanier += valeur;
 	}
 	
+	public int calculGainPoint(){
+		int totalPt = 0;
+		for(Produit p : contenuPanier.keySet()){
+			totalPt += p.getNbFidelite();
+		}
+		return totalPt;
+	}
+	
 	/* ******************************
 	 * Getter et Setter
 	 ****************************** */
