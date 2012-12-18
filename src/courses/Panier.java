@@ -3,6 +3,8 @@ package courses;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import exceptions.NoArticleException;
+
 import produit.Produit;
 
 public class Panier {
@@ -38,6 +40,21 @@ public class Panier {
 		}
 	}
 
+	public void retirerProduit(Produit p) throws NoArticleException{
+		if(contenuPanier.containsKey(p)){
+			if(contenuPanier.get(p)>1){//on a plus de 2 fois le produit dans le panier, on en enlève une.
+				int qtTmp = contenuPanier.get(p);
+				qtTmp--;
+				contenuPanier.put(p, qtTmp);
+				montantTotal -= p.getPrix();
+			}
+			else {
+				contenuPanier.remove(p);
+				montantTotal -= p.getPrix();
+			}
+		}
+		else throw new NoArticleException("le panier ne contient pas cet article");	
+	}
 	
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
