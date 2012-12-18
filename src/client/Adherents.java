@@ -10,7 +10,9 @@ public class Adherents extends CatClient {
 		super(nom);
 		points = 0;
 		this.seuil = seuil;
-		this.rabais = rabais;		
+		this.rabais = rabais;	
+		
+		propCat = "Personnes ayant adhérées au site, elles cumulent des points pour bénéficier de reductions.";
 	}
 	
 	public void ajouterPoints(int points){ 

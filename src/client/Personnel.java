@@ -9,6 +9,8 @@ public class Personnel extends CatClient {
 	public Personnel(String nom) {
 		super(nom);
 		//saPromo = new PromoPerso("perso", 1, 2.0f);
+		
+		propCat = "Personnes travaillant pour le site, elles bénéficient de réductions spécifiques sur les produits";
 	}
 	
 
