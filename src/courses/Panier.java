@@ -46,6 +46,8 @@ public class Panier {
 		
 		for(Produit p : contenuPanier.keySet()){
 			msg.append(p.toString());
+			msg.append("   quantite : ");
+			msg.append(contenuPanier.get(p));			
 			msg.append("\n");
 		}
 		msg.append("Montant total du panier :");

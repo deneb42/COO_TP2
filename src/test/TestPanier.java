@@ -12,7 +12,7 @@ import client.Simple;
 
 public class TestPanier {
 
-	public void main(){
+	public static void main(String[] args) {
 		
 		Client c1 = new Client("BADIE", "Jean", "jean.badie@gmail.com", "0607080910", 0, new Simple("simple"));
 		ArrayList<Produit> listProduit = new ArrayList<Produit>();
@@ -23,8 +23,16 @@ public class TestPanier {
 		listProduit.add(p2);
 		listProduit.add(p3);
 		
-		
+		System.out.println("ajout de p1");
 		c1.getSonPanier().ajouterProduit(p1);
+		System.out.println(c1.getSonPanier().toString());
+		System.out.println("ajout de p2");
+		c1.getSonPanier().ajouterProduit(p2);
+		System.out.println(c1.getSonPanier().toString());
+		System.out.println("ajout de p1 pour doubler quantité");
+		c1.getSonPanier().ajouterProduit(p1);
+		System.out.println(c1.getSonPanier().toString());
+		
 	}
 	
 	
