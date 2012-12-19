@@ -9,7 +9,6 @@ public abstract class CatClient {
 		nomCat = nom;	
 	}
 
-	public abstract void connexion();
 	public abstract int calculReduc();
 	
 	

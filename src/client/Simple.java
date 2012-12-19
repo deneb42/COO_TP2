@@ -16,11 +16,6 @@ public class Simple extends CatClient {
 		return singleton;
 	}
 
-	@Override
-	public void connexion() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public int calculReduc() {	

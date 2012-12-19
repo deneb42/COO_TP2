@@ -35,9 +35,4 @@ public class Adherents extends CatClient {
 		return 0;
 	}
 
-	@Override
-	public void connexion() {
-		// TODO Auto-generated method stub
-		
-	}
 }
