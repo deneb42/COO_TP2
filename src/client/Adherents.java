@@ -34,6 +34,7 @@ public class Adherents extends CatClient {
 		if(points >= seuil){
 			reduc+= rabais;
 		}
+		
 		return reduc;
 	}
 	
@@ -46,4 +47,6 @@ public class Adherents extends CatClient {
 		
 		return msg.toString();
 	}
+	public int getPoints(){return points;}
+	public int getSeuil() {return seuil;}
 }

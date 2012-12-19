@@ -88,6 +88,7 @@ public class Site {
 		System.out.println(c3.getSonPanier().toString());
 		//System.out.println("paiement du panier");
 		c3.getSonPanier().payerPanier();
+		System.out.println(c3.toString());
 		
 		
 		

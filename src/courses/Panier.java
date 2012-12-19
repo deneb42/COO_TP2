@@ -116,18 +116,19 @@ public class Panier {
 				"Votre commande a bien été payée\n" +
 				"Montant total débité : " + getMontantTotal());
 		
-		
 		try {
 			int points = this.calculGainPoint();
+			((Adherents) sonClient.getCategorie()).consommerPoints( ((Adherents) sonClient.getCategorie()).getPoints() - ((Adherents) sonClient.getCategorie()).getSeuil());
 			((Adherents) sonClient.getCategorie()).ajouterPoints(points);
 			System.out.println("Cher adhérent aujourd'hui vous avez cumulé : " + points + " points.");
-		} catch (ClassCastException e) {	
-			
-		}
+		} catch (ClassCastException e) {}
+		viderPanier();
+	}
+	
+	public void viderPanier(){
 		this.contenuPanier.clear();
 		this.montantSsReduc = 0;
 		this.totalReducPanier = 0;
-		
 	}
 	
 	/* ******************************
