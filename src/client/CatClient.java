@@ -10,6 +10,7 @@ public abstract class CatClient {
 	}
 
 	public abstract int calculReduc();
+	public abstract CatClient getCat();
 	
 	
 	public String toString() {
