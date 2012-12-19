@@ -1,5 +1,7 @@
 package client;
 
+import courses.Panier;
+
 public class Adherents extends CatClient {
 	private static int seuil = 100;
 	private static float rabais = 20;
@@ -14,8 +16,7 @@ public class Adherents extends CatClient {
 	}
 	
 	static public CatClient getCat() {
-		nbAdherent++;
-		return new Adherents("adherent n°" + nbAdherent);
+		return new Adherents("adherent n°" + nbAdherent++);
 	}
 	
 	public void ajouterPoints(int points){ 
@@ -26,7 +27,7 @@ public class Adherents extends CatClient {
 		this.points -= points;
 	}
 
-	public float calculReduc() {
+	public float calculReduc(Panier panier) {
 		//float reduc = 0;
 		
 		if(points >= seuil){

@@ -1,5 +1,7 @@
 package client;
 
+import courses.Panier;
+
 public abstract class CatClient {
 	
 	private String nomCat;
@@ -9,7 +11,7 @@ public abstract class CatClient {
 		nomCat = nom;	
 	}
 
-	public abstract float calculReduc();
+	public abstract float calculReduc(Panier sonPanier);
 	
 	
 	public String toString() {

@@ -1,16 +1,20 @@
 package client;
 
+import java.util.ArrayList;
+
 import promo.PromoPerso;
+import courses.Panier;
 
 public class Personnel extends CatClient {
 
 	private static Personnel singleton;
-	private PromoPerso saPromo;
+	private ArrayList<PromoPerso> sesPromos;
 	
 	private Personnel(String nom) {
 		super(nom);
 		//saPromo = new PromoPerso("perso", 1, 2.0f);
 		propCat = "Personnes travaillant pour le site, elles bénéficient de réductions spécifiques sur les produits";
+		sesPromos = new ArrayList<PromoPerso>();
 	}
 	
 	public static CatClient getCat() {
@@ -23,12 +27,12 @@ public class Personnel extends CatClient {
 
 
 	@Override
-	public float calculReduc() {
-		//Todo
+	public float calculReduc(Panier sonPanier) {
+		//for
 		return 0;
 	}
 
-	public PromoPerso getSaPromo() {return saPromo;}
-	public void setSaPromo(PromoPerso saPromo) {this.saPromo = saPromo;	}
+	public void removePromo(PromoPerso promo) { sesPromos.remove(promo); }
+	public void addPromo(PromoPerso promo) {this.sesPromos.add(promo);	}
 
 }

@@ -89,7 +89,7 @@ public class Panier {
 	}
 	
 	public float calculReduc() {
-		float reduc = sonClient.getCategorie().calculReduc(); // calcul des promos liées a la catégorie du client (personnel, adhérent)
+		float reduc = sonClient.getCategorie().calculReduc(this); // calcul des promos liées a la catégorie du client (personnel, adhérent)
 		
 		for(Produit p:contenuPanier.keySet()) { // calcul des promos de produit
 			for(Promotion promo: p.getPromos()) {
