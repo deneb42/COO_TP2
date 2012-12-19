@@ -1,6 +1,6 @@
 package client;
 
-import courses.Panier;
+import produit.Produit;
 
 
 public class Adherents extends CatClient {
@@ -28,7 +28,7 @@ public class Adherents extends CatClient {
 		this.points -= points;
 	}
 
-	public float calculReduc(Panier panier) {
+	public float calculReduc(Produit p) {
 		float reduc = 0;
 		
 		if(points >= seuil){

@@ -1,6 +1,6 @@
 package client;
 
-import courses.Panier;
+import produit.Produit;
 
 public abstract class CatClient {
 	
@@ -11,7 +11,7 @@ public abstract class CatClient {
 		nomCat = nom;	
 	}
 
-	public abstract float calculReduc(Panier sonPanier);
+	public abstract float calculReduc(Produit p);
 	
 	
 	public String toString() {

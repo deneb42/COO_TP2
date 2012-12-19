@@ -1,6 +1,6 @@
 package client;
 
-import courses.Panier;
+import produit.Produit;
 
 public class Simple extends CatClient {
 
@@ -19,7 +19,7 @@ public class Simple extends CatClient {
 	}
 
 	@Override
-	public float calculReduc(Panier p) {	
+	public float calculReduc(Produit p) {	
 		return 0;
 	}
 
