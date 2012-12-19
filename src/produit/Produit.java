@@ -5,14 +5,15 @@ import java.util.ArrayList;
 import promo.Promotion;
 
 public abstract class Produit {
+	private static int nbProduit=0;
 	protected int idProduit;
 	protected float prix;
 	protected String nom;
 	protected int nbFidelite;
 	protected ArrayList<Promotion> promos;
 	
-	protected Produit(int id, float p, String n, int nf) {
-		idProduit=id;
+	protected Produit(float p, String n, int nf) {
+		idProduit=nbProduit++;
 		prix = p;
 		nom=n;
 		nbFidelite=nf;
@@ -22,6 +23,19 @@ public abstract class Produit {
 		return "Produit n°" + idProduit + " " + nom;
 	}
 	
+	public boolean equals(Object o) {
+		if(o==null)
+			return false;
+		if(o==this)
+			return true;
+		try {
+			Produit p = (Produit)o;
+			return this.idProduit==p.idProduit;
+		}
+		catch (ClassCastException e) {
+			return false;
+		} 
+	}
 	
 	public void addPromo(Promotion p) { promos.add(p); }
 	

@@ -1,5 +1,7 @@
 package client;
 
+import courses.Panier;
+
 public class Simple extends CatClient {
 
 	private static Simple singleton;
@@ -17,7 +19,7 @@ public class Simple extends CatClient {
 	}
 
 	@Override
-	public float calculReduc() {	
+	public float calculReduc(Panier p) {	
 		return 0;
 	}
 

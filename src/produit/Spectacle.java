@@ -7,14 +7,14 @@ public class Spectacle extends Produit {
 	private Date date;
 	private String lieu;
 	
-	public Spectacle(int id, float p, String n, int nf, Date d, String l) {
-		super(id, p, n, nf);
+	public Spectacle(float p, String n, int nf, Date d, String l) {
+		super(p, n, nf);
 		date = d;
 		lieu=l;
 	}
 	
-	public Spectacle(int id, float p, String n, Date d, String l) {
-		this(id, p, n, nbFidelDef, d, l);
+	public Spectacle(float p, String n, Date d, String l) {
+		this(p, n, nbFidelDef, d, l);
 	}
 	
 	public String toString() {

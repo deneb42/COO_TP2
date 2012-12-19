@@ -4,13 +4,13 @@ public class High_Tech extends Produit {
 	static final int nbFidelDef=15;
 	String specTechniques;
 	
-	public High_Tech(int id, float p, String n, int nf, String sp) {
-		super(id, p, n, nf);
+	public High_Tech(float p, String n, int nf, String sp) {
+		super(p, n, nf);
 		specTechniques = sp;
 	}
 	
-	public High_Tech(int id, float p, String n, String sp) {
-		this(id, p, n, nbFidelDef, sp);
+	public High_Tech(float p, String n, String sp) {
+		this(p, n, nbFidelDef, sp);
 	}
 	
 	public String toString() {

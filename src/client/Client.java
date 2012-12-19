@@ -18,8 +18,7 @@ public class Client {
 		this.prenom = prenom;
 		this.email = email;
 		this.categorie = cat;
-		this.id = nbClient;
-		nbClient++;
+		this.id = nbClient++;
 		this.telephone = telephone;	
 		sonPanier = new Panier(this);
 	}
