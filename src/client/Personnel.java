@@ -30,4 +30,5 @@ public class Personnel extends CatClient {
 
 	public PromoPerso getSaPromo() {return saPromo;}
 	public void setSaPromo(PromoPerso saPromo) {this.saPromo = saPromo;	}
+
 }
