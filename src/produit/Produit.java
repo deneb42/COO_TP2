@@ -34,7 +34,7 @@ public abstract class Produit {
 		}
 		catch (ClassCastException e) {
 			return false;
-		}
+		} 
 	}
 	
 	public void addPromo(Promotion p) { promos.add(p); }
