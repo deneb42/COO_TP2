@@ -8,8 +8,8 @@ public class PromoFlash extends Promotion {
 
 	ArrayList<Produit> pdtsCible;
 	
-	protected PromoFlash(String name, int id, float red, ArrayList<Produit> p) {
-		super(name, id, red);
+	protected PromoFlash(String name, float red, ArrayList<Produit> p) {
+		super(name, red);
 		pdtsCible = new ArrayList<Produit>(p);
 	}
 

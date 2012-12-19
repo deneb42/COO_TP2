@@ -1,12 +1,16 @@
 package client;
 
+import java.util.ArrayList;
+
 import produit.Produit;
+import promo.PromoPerso;
 
 
 public class Adherents extends CatClient {
 	private static int seuil = 100;
 	private static float rabais = 20;
 	private static int nbAdherent=0;
+	private static ArrayList<PromoPerso> sesPromos;
 	
 	private int points;
 	
@@ -31,9 +35,6 @@ public class Adherents extends CatClient {
 	public float calculReduc(Produit p) {
 		float reduc = 0;
 		
-		if(points >= seuil){
-			reduc+= rabais;
-		}
 		
 		return reduc;
 	}
