@@ -1,9 +1,9 @@
 package courses;
 
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 import produit.Produit;
-import promo.Promotion;
 import client.Client;
 import exceptions.NoArticleException;
 
@@ -94,9 +94,9 @@ public class Panier {
 	public float calculReduc() {
 		float reduc = sonClient.getCategorie().calculReduc(this); // calcul des promos liées a la catégorie du client (personnel, adhérent)
 		
-		for(Produit p:contenuPanier.keySet()) { // calcul des promos de produit
-			for(Promotion promo: p.getPromos()) {
-				reduc+=promo.calculerReduc();
+		for(Entry<Produit,Integer> e:contenuPanier.entrySet()) { // calcul des promos de produit
+			if(e.getKey().getPromo()!=null) {
+				reduc+=e.getKey().getPromo().calculerReduc()*e.getValue();
 			}
 		}
 		totalReducPanier = reduc;

@@ -1,7 +1,5 @@
 package produit;
 
-import java.util.ArrayList;
-
 import promo.Promotion;
 
 public abstract class Produit {
@@ -10,7 +8,7 @@ public abstract class Produit {
 	protected float prix;
 	protected String nom;
 	protected int nbFidelite;
-	protected ArrayList<Promotion> promos;
+	protected Promotion promo;
 	
 	protected Produit(float p, String n, int nf) {
 		idProduit=nbProduit++;
@@ -37,11 +35,11 @@ public abstract class Produit {
 		} 
 	}
 	
-	public void addPromo(Promotion p) { promos.add(p); }
+	public void setPromo(Promotion p) { promo = p; }
 	
 	public int getIdProduit() { return idProduit; }
 	public float getPrix() { return prix; }
 	public String getNom() { return nom; }
 	public int getNbFidelite() { return nbFidelite; }
-	public ArrayList<Promotion> getPromos() { return promos; }
+	public Promotion getPromo() { return promo; }
 }

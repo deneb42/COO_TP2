@@ -29,12 +29,12 @@ public class Adherents extends CatClient {
 	}
 
 	public float calculReduc(Panier panier) {
-		//float reduc = 0;
+		float reduc = 0;
 		
 		if(points >= seuil){
-			return rabais;
+			reduc+= rabais;
 		}
-		return 0;
+		return reduc;
 	}
 	
 	public String toString(){
@@ -46,5 +46,4 @@ public class Adherents extends CatClient {
 		
 		return msg.toString();
 	}
-
 }
