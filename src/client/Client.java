@@ -25,7 +25,7 @@ public class Client {
 	
 	public void connexion(CatClient cat){
 		categorie = cat;
-		sonPanier.appliquerReduc(sonPanier.calculReduc());
+		sonPanier.calculReduc();
 	}
 	public void deconnexion(){
 		categorie = Simple.getCat();

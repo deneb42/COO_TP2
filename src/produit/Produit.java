@@ -44,9 +44,10 @@ public abstract class Produit {
 		if(promoPdt!= null)
 			reduc = promoPdt.calculerReduc();
 		
-		if(promoCat!=null && promoPdt.calculerReduc()>reduc)
-			reduc = promoPdt.calculerReduc();
-		
+		if(promoCat!=null){
+			if(promoCat.calculerReduc()>reduc)
+				reduc = promoCat.calculerReduc();
+		}
 		return reduc;
 	}
 	

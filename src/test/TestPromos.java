@@ -29,6 +29,6 @@ public class TestPromos {
 		/* Création de promos flash */
 		
 		
-		GestionnairePromo.affichePromos(produits);
+//		GestionnairePromo.affichePromos(produits);
 	}
 }

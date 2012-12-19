@@ -76,7 +76,7 @@ public class EnsembleTest {
 		System.out.println(c3.getSonPanier().toString());
 		c3.getSonPanier().payerPanier();
 		
-		System.out.println("------------------------------------");
+		System.out.println("\n------------------------------------");
 		System.out.println("Test promos adhérents : sélection d'un client adhérents avec assez de points pour bénéficier d'une promo"); // on suppose qu'il s'est connecté avant
 		c3 = clients.get(2);
 		((Adherents) c3.getCategorie()).ajouterPoints(200);
