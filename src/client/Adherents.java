@@ -35,10 +35,4 @@ public class Adherents extends CatClient {
 		return 0;
 	}
 
-	@Override
-	public CatClient getCat() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

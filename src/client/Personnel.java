@@ -31,11 +31,4 @@ public class Personnel extends CatClient {
 	public PromoPerso getSaPromo() {return saPromo;}
 	public void setSaPromo(PromoPerso saPromo) {this.saPromo = saPromo;	}
 
-
-
-	@Override
-	public CatClient getCat() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
