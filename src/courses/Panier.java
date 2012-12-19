@@ -34,7 +34,7 @@ public class Panier {
 		else {//sinon on ajoute juste le produit, avec une quantité à 1
 			
 			contenuPanier.put(p, 1);
-			montantTotal = p.getPrix();
+			montantTotal += p.getPrix();
 		}
 	}
 
