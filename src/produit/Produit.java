@@ -51,7 +51,7 @@ public abstract class Produit {
 	}
 	
 	public void setPromoPdt(PromoProduit p) { promoPdt = p; }
-	public static void setPromoCat(PromoProduit p) { promoCat = p; }
+	public void setPromoCat(PromoProduit p) { promoCat = p; }
 	
 	public int getIdProduit() { return idProduit; }
 	public float getPrix() { return prix; }

@@ -13,23 +13,26 @@ public class Site {
 	 */
 	public static void main(String[] args) {	
 		
-		/* Création des clients et des produits */
+		/* Création des produits, des pomotions et des clients */
 		ArrayList<Produit> produits = TestProduit.populeProduits();
-		ArrayList<Client> clients = TestClient.populeClient();
+		TestPromos.creerPromos(produits);
+		ArrayList<Client> clients = TestClient.populeClient();		
 		/* *********************************** */
 		
-		ensembleTest.ajoutPanierSimple(clients, produits); //Test des ajouts et suppression simple dans le panier.
+//		EnsembleTest.ajoutPanierSimple(clients, produits); //Test des ajouts et suppression simple dans le panier.
 		
-//		ensembleTest.operationsClients(clients, produits); // Test des modifications simple de statut des clients.
+//		EnsembleTest.operationsClients(clients, produits); // Test des modifications simple de statut des clients.
 		
-//		ensembleTest.promoAdherents(clients, produits); //vérifie le fonctionnement des promos des adhérents
+//		EnsembleTest.promoAdherents(clients, produits); //vérifie le fonctionnement des promos des adhérents
 		
-//		ensembleTest.promoPersonnel(clients, produits);//vérifie le fonctionnement des promos pour le personnel
+//		EnsembleTest.promoPersonnel(clients, produits);//vérifie le fonctionnement des promos pour le personnel
 		
-//		ensembleTest.logAdherentAvecPanier(clients, produits); //test le passage d'un client simple à un adhérent 
+//		EnsembleTest.logAdherentAvecPanier(clients, produits); //test le passage d'un client simple à un adhérent 
 															//en conservant panier et recalcul des promos.
 		
 		
+		
+
 		
 	}
 

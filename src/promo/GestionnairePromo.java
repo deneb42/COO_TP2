@@ -31,11 +31,15 @@ public class GestionnairePromo {
 		prod.setPromoPdt(null);
 	}
 	
-	/*public static void modifierPromoCat( <? super Produit> c, PromoProduit promo){
-		c.setPromoCat(promo);
-	}*/
+	public static void modifierPromoCat(Produit prod, PromoProduit promo){
+		prod.setPromoCat(promo);
+	}
 	
-	//todo promoCat et promoFlash
+	public static void supprimerPomoCat(Produit prod){
+		prod.setPromoCat(null);
+	}
+	
+// et promoFlash
 		
 	
 	/* **********************************************
@@ -48,11 +52,12 @@ public class GestionnairePromo {
 		System.out.println(promosPersotoString());
 		System.out.println(promosAdherenttoString());
 		System.out.println(PromosProduits(produits));
+//		System.out.println();
 	}
 	
 	public static String promosPersotoString(){
 		StringBuilder msg = new StringBuilder();
-		msg.append("- Promos personnel -");
+		msg.append("- Promos personnel -\n");
 		for(PromoPerso p : Personnel.getPromos()){
 			msg.append(p.toString());
 			msg.append("\n");
@@ -62,7 +67,7 @@ public class GestionnairePromo {
 	}
 	public static String promosAdherenttoString(){
 		StringBuilder msg = new StringBuilder();
-		msg.append("- Promos adherent -");
+		msg.append("- Promos adherent -\n");
 		for(PromoAdherent p : Adherents.getPromos()){
 			msg.append(p.toString());
 			msg.append("\n");
@@ -73,10 +78,12 @@ public class GestionnairePromo {
 	
 	public static String PromosProduits(ArrayList<Produit> produits){
 		StringBuilder msg = new StringBuilder();
-		msg.append("- Promos produits -");
+		msg.append("- Promos produits -\n");
 		for(Produit prod : produits){
-			msg.append(prod.getPromoPdt().toString());
-			msg.append("\n");
+			if(prod.getPromoPdt() != null){
+				msg.append(prod.getPromoPdt().toString());
+				msg.append("\n");
+			}
 		}
 		return msg.toString();
 		

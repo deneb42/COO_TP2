@@ -7,9 +7,9 @@ import client.Adherents;
 import client.Client;
 import exceptions.NoArticleException;
 
-public class ensembleTest {
+public class EnsembleTest {
 	
-	public ensembleTest() {
+	public EnsembleTest() {
 	
 	}
 	

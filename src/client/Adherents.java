@@ -10,7 +10,7 @@ public class Adherents extends CatClient {
 	private static int seuil = 100;
 	private static float rabais = 20;
 	private static int nbAdherent=0;
-	private static ArrayList<PromoAdherent> sesPromos;
+	private static ArrayList<PromoAdherent> sesPromos = new ArrayList<PromoAdherent>();;
 	
 	private int points;
 	
@@ -18,6 +18,7 @@ public class Adherents extends CatClient {
 		super(nom);
 		points = 0;
 		propCat = "Personnes ayant adhérées au site, elles cumulent des points pour bénéficier de reductions.";
+		
 	}
 	
 	static public CatClient getCat() {
