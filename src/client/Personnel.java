@@ -1,7 +1,9 @@
 package client;
 
 import java.util.ArrayList;
+import java.util.Map.Entry;
 
+import produit.Produit;
 import promo.PromoPerso;
 import courses.Panier;
 
@@ -28,8 +30,16 @@ public class Personnel extends CatClient {
 
 	@Override
 	public float calculReduc(Panier sonPanier) {
-		//for
-		return 0;
+		float reduc=0;
+		int index=0;
+		for(Entry<Produit, Integer> e:sonPanier.getContenuPanier().entrySet()) {
+			index = sesPromos.indexOf(e.getKey());
+			if(index!=-1) {
+				reduc += sesPromos.get(index).calculerReduc()*e.getValue();
+				// on ajoute la reduction pour le produit trouvé * le nombre de produits.
+			}
+		}
+		return reduc;
 	}
 
 	public void removePromo(PromoPerso promo) { sesPromos.remove(promo); }
