@@ -13,7 +13,7 @@ public class Simple extends CatClient {
 	
 	public static CatClient getCat() {
 		if(singleton==null)
-			singleton = new Simple("Anonyme");
+			singleton = new Simple("Visiteur");
 		
 		return singleton;
 	}

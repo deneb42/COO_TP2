@@ -41,7 +41,7 @@ public class Panier {
 			this.calculReduc();
 
 		}
-		System.out.println("Mise à jour du panier : " + this.toString());
+//		System.out.println("Mise à jour du panier : " + this.toString());
 	}
 
 	public void retirerProduit(Produit p) throws NoArticleException{
@@ -60,7 +60,7 @@ public class Panier {
 			}
 		}
 		else throw new NoArticleException("le panier ne contient pas cet article");	
-		System.out.println("Mise à jour du panier : " + this.toString());
+//		System.out.println("Mise à jour du panier : " + this.toString());
 	}
 	
 	public String toString() {
