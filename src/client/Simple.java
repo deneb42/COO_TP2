@@ -16,9 +16,11 @@ public class Simple extends CatClient {
 		return null;
 	}
 
-
 	@Override
-	public int calculReduc() {	
+	public int calculReduc() {
+		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
 }
