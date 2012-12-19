@@ -18,9 +18,11 @@ public class Site {
 		/* Création des clients et des produits */
 		ArrayList<Produit> produits = TestProduit.populeProduits();
 		ArrayList<Client> clients = TestClient.populeClient();
+		/* *********************************** */
 		
+		/* Test sur un panier simple */
 		Client c1 = clients.get(0);
-		System.out.println(c1.toString());
+		System.out.println(c1.toString()); // on affiche le client sélectionné
 		System.out.println("ajout de p1");
 		c1.getSonPanier().ajouterProduit(produits.get(1));
 		System.out.println(c1.getSonPanier().toString());
@@ -30,6 +32,7 @@ public class Site {
 		System.out.println("ajout de p1 pour doubler quantité");
 		c1.getSonPanier().ajouterProduit(produits.get(1));
 		System.out.println(c1.getSonPanier().toString());
+		/* *********************************** */
 		
 		System.out.println("suppression de p1");
 		try {

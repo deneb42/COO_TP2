@@ -1,6 +1,5 @@
 package client;
 
-import com.sun.xml.internal.bind.v2.runtime.RuntimeUtil.ToStringAdapter;
 
 public class Adherents extends CatClient {
 	private static int seuil = 100;

@@ -19,13 +19,9 @@ public class TestClient {
 	
 	public static ArrayList<Client> populeClient() {
 		ArrayList<Client> c = new ArrayList<Client>();
-		int id = 0;
 		c.add(new Client("Blois", "Benjamin", "benjblois@gmail.com", "0607080910", Personnel.getCat()));
-		id++;
 		c.add(new Client("BADIE","Jean", "jean.badie@gmail.com", "0607080919", Adherents.getCat()));
-		id++;
 		c.add(new Client("LYET","Thomas", "thomas.lyet@gmail.com", "0607080919", Adherents.getCat()));
-		id++;
 		c.add(new Client("Torres","Fernando", "fernan.orres@gmail.com", "0607080919", Simple.getCat()));
 	
 		return c;
