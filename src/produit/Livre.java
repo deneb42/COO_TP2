@@ -4,6 +4,8 @@ public class Livre extends Produit {
 	static final int nbFidelDef=5;
 	private String auteur, resume;
 	
+	public Livre() {}
+			
 	public Livre(float p, String n, int nf, String a, String r) {
 		super(p, n, nf);
 		auteur=a;
