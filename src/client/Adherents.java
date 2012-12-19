@@ -38,6 +38,16 @@ public class Adherents extends CatClient {
 		return reduc;
 	}
 	
+	/*public float calculReduc(Produit p) {
+		float reduc = 0;
+		
+		if(points >= seuil){
+			reduc+= rabais;
+		}
+		
+		return reduc;
+	}*/
+	
 	public String toString(){
 		StringBuilder msg = new StringBuilder();
 		msg.append(super.toString());

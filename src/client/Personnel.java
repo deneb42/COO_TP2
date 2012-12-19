@@ -8,7 +8,7 @@ import promo.PromoPerso;
 public class Personnel extends CatClient {
 
 	private static Personnel singleton;
-	private ArrayList<PromoPerso> sesPromos;
+	private static ArrayList<PromoPerso> sesPromos;
 	
 	private Personnel(String nom) {
 		super(nom);
@@ -33,7 +33,7 @@ public class Personnel extends CatClient {
 		return 0;
 	}
 
-	public void removePromo(PromoPerso promo) { sesPromos.remove(promo); }
-	public void addPromo(PromoPerso promo) {this.sesPromos.add(promo);	}
+	public static void removePromo(PromoPerso promo) { sesPromos.remove(promo); }
+	public static void addPromo(PromoPerso promo) { sesPromos.add(promo);	}
 
 }
