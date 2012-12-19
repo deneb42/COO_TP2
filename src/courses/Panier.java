@@ -10,13 +10,13 @@ import exceptions.NoArticleException;
 public class Panier {
 	private Client sonClient;
 	private HashMap<Produit, Integer> contenuPanier; //produit et quantité.
-	private float montantTotal;
+	private float montantSsReduc;
 	private float totalReducPanier;
 	
 	public Panier(Client c) {
 		sonClient = c;
 		contenuPanier = new HashMap<Produit, Integer>();
-		montantTotal = 0;
+		montantSsReduc = 0;
 		totalReducPanier = 0;
 	}
 	public Panier (Client c, Produit p){
@@ -29,12 +29,12 @@ public class Panier {
 			int nbTmp = contenuPanier.get(p);
 			nbTmp += 1; 						//on incrémente la quantité
 			contenuPanier.put(p, nbTmp);
-			montantTotal += p.getPrix();
+			montantSsReduc += p.getPrix();
 		}
 		else {//sinon on ajoute juste le produit, avec une quantité à 1
 			
 			contenuPanier.put(p, 1);
-			montantTotal = p.getPrix();
+			montantSsReduc = p.getPrix();
 		}
 	}
 
@@ -44,11 +44,11 @@ public class Panier {
 				int qtTmp = contenuPanier.get(p);
 				qtTmp--;
 				contenuPanier.put(p, qtTmp);
-				montantTotal -= p.getPrix();
+				montantSsReduc -= p.getPrix();
 			}
 			else {
 				contenuPanier.remove(p);
-				montantTotal -= p.getPrix();
+				montantSsReduc -= p.getPrix();
 			}
 		}
 		else throw new NoArticleException("le panier ne contient pas cet article");	
@@ -66,9 +66,11 @@ public class Panier {
 			msg.append("\n");
 		}
 		msg.append("\n-----\nMontant total du panier :");
-		msg.append(montantTotal);
+		msg.append(montantSsReduc);
 		msg.append("\nMontant des reductions : ");
 		msg.append(totalReducPanier);
+		msg.append("\nMontant total apres reductions : ");
+		msg.append(getMontantTotal());
 		msg.append("\n--------------------------------------------------\n");
 			
 		
@@ -76,7 +78,7 @@ public class Panier {
 	}
 	
 	public void appliquerReduc(float valeur){
-		montantTotal -= valeur;
+		montantSsReduc -= valeur;
 		totalReducPanier += valeur;
 	}
 	
@@ -96,7 +98,7 @@ public class Panier {
 				reduc+=promo.calculerReduc();
 			}
 		}
-		
+		totalReducPanier = reduc;
 		return reduc;
 	}
 	
@@ -104,9 +106,10 @@ public class Panier {
 	 * Getter et Setter
 	 ****************************** */
 	public void setContenuPanier(HashMap<Produit, Integer> contenuPanier) { this.contenuPanier = contenuPanier; }
-	public void setMontantTotal(float montantTotal) { this.montantTotal = montantTotal; }
+	public void setMontantTotal(float montantTotal) { this.montantSsReduc = montantTotal; }
 	public void setTotalReducPanier(float totalReducPanier) { this.totalReducPanier = totalReducPanier; }
 	public HashMap<Produit, Integer> getContenuPanier() { return contenuPanier; }
-	public float getMontantTotal() { return montantTotal; }
+	public float getMontantSsReduc() { return montantSsReduc; }
+	public float getMontantTotal() { return montantSsReduc-totalReducPanier; }
 	public float getTotalReducPanier() { return totalReducPanier; }
 }

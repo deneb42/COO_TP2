@@ -1,7 +1,9 @@
 package client;
 
 import java.util.ArrayList;
+import java.util.Map.Entry;
 
+import produit.Produit;
 import promo.PromoPerso;
 import courses.Panier;
 
@@ -28,7 +30,13 @@ public class Personnel extends CatClient {
 
 	@Override
 	public float calculReduc(Panier sonPanier) {
-		//for
+		int index=0;
+		for(Entry<Produit, Integer> e:sonPanier.getContenuPanier().entrySet()) {
+			index = sesPromos.indexOf(e.getKey());
+			if(index!=-1) {
+				
+			}
+		}
 		return 0;
 	}
 
