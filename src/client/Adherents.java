@@ -1,5 +1,7 @@
 package client;
 
+import com.sun.xml.internal.bind.v2.runtime.RuntimeUtil.ToStringAdapter;
+
 public class Adherents extends CatClient {
 	private static int seuil = 100;
 	private static float rabais = 20;
@@ -33,6 +35,16 @@ public class Adherents extends CatClient {
 			return rabais;
 		}
 		return 0;
+	}
+	
+	public String toString(){
+		StringBuilder msg = new StringBuilder();
+		msg.append(super.toString());
+		msg.append("\nNombre de points cumulés : ");
+		msg.append(points);
+		msg.append("\n");
+		
+		return msg.toString();
 	}
 
 }

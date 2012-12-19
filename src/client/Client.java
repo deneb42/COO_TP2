@@ -24,8 +24,11 @@ public class Client {
 		sonPanier = new Panier(this);
 	}
 	
-	public void connexion(){
-		//ToDo
+	public void connexion(CatClient cat){
+		categorie = cat;
+	}
+	public void deconnexion(){
+		categorie = Simple.getCat();
 	}
 
 	public String toString() {
@@ -41,8 +44,9 @@ public class Client {
 		msg.append(email);
 		msg.append("\nTelephone : ");
 		msg.append(telephone);
-		msg.append("\nCategorie : ");
-		msg.append(categorie);
+		msg.append("\nCategorie : ");	
+		msg.append(categorie.toString());
+			
 		msg.append("\n");
 		
 		return msg.toString();
