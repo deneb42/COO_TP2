@@ -14,11 +14,6 @@ public class Personnel extends CatClient {
 	}
 	
 
-	@Override
-	public void connexion() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public int calculReduc() {

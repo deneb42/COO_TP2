@@ -7,11 +7,6 @@ public class Simple extends CatClient {
 		propCat = "Personne visitant le site exceptionnellement, ne bénéficient pas du cumul des points.";
 	}
 
-	@Override
-	public void connexion() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public int calculReduc() {	
