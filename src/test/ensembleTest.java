@@ -14,7 +14,7 @@ public class ensembleTest {
 	}
 	
 	/* Test sur un panier simple */
-	public void ajoutPanierSimple(ArrayList<Client> clients, ArrayList<Produit> produits){
+	public static void ajoutPanierSimple(ArrayList<Client> clients, ArrayList<Produit> produits){
 		
 		Client c1 = clients.get(0);
 		System.out.println(c1.toString()); // on affiche le client sélectionné
@@ -47,7 +47,7 @@ public class ensembleTest {
 	
 	/* Test d'Opération sur les clients */
 	
-	public void operationsClients(ArrayList<Client> clients, ArrayList<Produit> produits){
+	public static void operationsClients(ArrayList<Client> clients, ArrayList<Produit> produits){
 		System.out.println("------------------------------------");
 		System.out.println("Opérations sur un client");
 		Client c2 = clients.get(3);
@@ -63,7 +63,7 @@ public class ensembleTest {
 
 	/* Test sur les promos d'adhérents */
 	
-	public void promoAdherents(ArrayList<Client> clients, ArrayList<Produit> produits){
+	public static void promoAdherents(ArrayList<Client> clients, ArrayList<Produit> produits){
 		
 		System.out.println("------------------------------------");
 		System.out.println("Test promos adhérents : sélection d'un client adhérents sans points"); // on suppose qu'il s'est connecté avant
@@ -92,7 +92,7 @@ public class ensembleTest {
 	
 	
 	/* Test sur les promos Personnel */
-	public void promoPersonnel(ArrayList<Client> clients, ArrayList<Produit> produits){
+	public static void promoPersonnel(ArrayList<Client> clients, ArrayList<Produit> produits){
 		System.out.println("------------------------------------");
 		System.out.println("Test promos personnel : sélection d'un membre du personnel"); // on suppose qu'il s'est connecté avant
 		Client c4 = clients.get(0);
@@ -110,7 +110,7 @@ public class ensembleTest {
 	
 	/* Test le passage d'un client anonyme à un adhérent en conservant le panier => calcul de nouvelle réduc */
 	
-	public void logAdherentAvecPanier(ArrayList<Client> clients, ArrayList<Produit> produits){
+	public static void logAdherentAvecPanier(ArrayList<Client> clients, ArrayList<Produit> produits){
 		System.out.println("------------------------------------");
 		System.out.println("Test log et conservation du panier"); // on suppose qu'il s'est connecté avant
 		Client c5= clients.get(3);
