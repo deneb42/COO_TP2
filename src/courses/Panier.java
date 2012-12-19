@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 import produit.Produit;
+import client.Adherents;
 import client.Client;
 import exceptions.NoArticleException;
 
@@ -30,11 +31,14 @@ public class Panier {
 			nbTmp += 1; 						//on incrémente la quantité
 			contenuPanier.put(p, nbTmp);
 			montantSsReduc += p.getPrix();
+			this.calculReduc();
+			
 		}
 		else {//sinon on ajoute juste le produit, avec une quantité à 1
 			
 			contenuPanier.put(p, 1);
 			montantSsReduc += p.getPrix();
+			this.calculReduc();
 
 		}
 	}
@@ -46,10 +50,12 @@ public class Panier {
 				qtTmp--;
 				contenuPanier.put(p, qtTmp);
 				montantSsReduc -= p.getPrix();
+				this.calculReduc();
 			}
 			else {
 				contenuPanier.remove(p);
 				montantSsReduc -= p.getPrix();
+				this.calculReduc();
 			}
 		}
 		else throw new NoArticleException("le panier ne contient pas cet article");	
@@ -101,6 +107,27 @@ public class Panier {
 		}
 		totalReducPanier = reduc;
 		return reduc;
+	}
+	
+	public void payerPanier(){
+		System.out.println("PAIEMENT DU PANIER\n" +
+				"Envoi vers le module de paiement en ligne\n" +
+				".................\n" +
+				"Votre commande a bien été payée\n" +
+				"Montant total débité : " + getMontantTotal());
+		
+		
+		try {
+			int points = this.calculGainPoint();
+			((Adherents) sonClient.getCategorie()).ajouterPoints(points);
+			System.out.println("Cher adhérent aujourd'hui vous avez cumulé : " + points + " points.");
+		} catch (ClassCastException e) {	
+			
+		}
+		this.contenuPanier.clear();
+		this.montantSsReduc = 0;
+		this.totalReducPanier = 0;
+		
 	}
 	
 	/* ******************************

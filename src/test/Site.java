@@ -65,7 +65,7 @@ public class Site {
 
 		/* Test sur les promos d'adhérents */
 		System.out.println("------------------------------------");
-		System.out.println("Test promos adhérents : sélection d'un client adhérents"); // on suppose qu'il s'est connecté avant
+		System.out.println("Test promos adhérents : sélection d'un client adhérents sans points"); // on suppose qu'il s'est connecté avant
 		Client c3 = clients.get(2);
 		System.out.println(c3.toString());
 		
@@ -73,8 +73,23 @@ public class Site {
 		c3.getSonPanier().ajouterProduit(produits.get(2));
 		c3.getSonPanier().ajouterProduit(produits.get(3));
 		System.out.println(c3.getSonPanier().toString());
-		c3.getSonPanier().appliquerReduc(c3.getSonPanier().calculReduc()); // On calcul est applique la réduc pour des adhérents
+		//System.out.println("paiement du panier");
+		c3.getSonPanier().payerPanier();
+		
+		System.out.println("------------------------------------");
+		System.out.println("Test promos adhérents : sélection d'un client adhérents avec assez de points pour bénéficier d'une promo"); // on suppose qu'il s'est connecté avant
+		c3 = clients.get(2);
+		((Adherents) c3.getCategorie()).ajouterPoints(200);
+		System.out.println(c3.toString());
+		
+		c3.getSonPanier().ajouterProduit(produits.get(0));
+		c3.getSonPanier().ajouterProduit(produits.get(2));
+		c3.getSonPanier().ajouterProduit(produits.get(3));
 		System.out.println(c3.getSonPanier().toString());
+		//System.out.println("paiement du panier");
+		c3.getSonPanier().payerPanier();
+		
+		
 		
 		
 	}
