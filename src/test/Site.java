@@ -3,10 +3,7 @@ package test;
 import java.util.ArrayList;
 
 import produit.Produit;
-import client.Adherents;
 import client.Client;
-import client.Personnel;
-import client.Simple;
 import exceptions.NoArticleException;
 
 public class Site {
@@ -15,12 +12,9 @@ public class Site {
 	 * @param args
 	 * Classe de test du programme : va émuler le site.
 	 */
-	public static void main(String[] args) {
-		Adherents ad = new Adherents("adherent", 30);
-		Personnel perso = new Personnel("perso");
-		Simple simple = new Simple("simple");	
+	public static void main(String[] args) {	
 		ArrayList<Produit> produits = TestProduit.populeProduits();
-		ArrayList<Client> clients = TestClient.populeClient(ad, perso, simple);
+		ArrayList<Client> clients = TestClient.populeClient();
 		
 		Client c1 = clients.get(0);
 		
