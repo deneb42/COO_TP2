@@ -73,7 +73,6 @@ public class Site {
 		c3.getSonPanier().ajouterProduit(produits.get(2));
 		c3.getSonPanier().ajouterProduit(produits.get(3));
 		System.out.println(c3.getSonPanier().toString());
-		//System.out.println("paiement du panier");
 		c3.getSonPanier().payerPanier();
 		
 		System.out.println("------------------------------------");
@@ -86,12 +85,23 @@ public class Site {
 		c3.getSonPanier().ajouterProduit(produits.get(2));
 		c3.getSonPanier().ajouterProduit(produits.get(3));
 		System.out.println(c3.getSonPanier().toString());
-		//System.out.println("paiement du panier");
 		c3.getSonPanier().payerPanier();
 		System.out.println(c3.toString());
+		/* *********************************** */
 		
+		/* Test sur les promos Personnel */
+		System.out.println("------------------------------------");
+		System.out.println("Test promos personnel : sélection d'un membre du personnel"); // on suppose qu'il s'est connecté avant
+		Client c4 = clients.get(0);
+		System.out.println(c4.toString());
 		
-		
+		c4.getSonPanier().ajouterProduit(produits.get(4));
+		c4.getSonPanier().ajouterProduit(produits.get(7));
+		c4.getSonPanier().ajouterProduit(produits.get(5));
+		c4.getSonPanier().ajouterProduit(produits.get(3));
+		System.out.println(c4.getSonPanier().toString());
+		c4.getSonPanier().payerPanier();
+		/* *********************************** */
 		
 	}
 
