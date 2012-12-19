@@ -9,11 +9,11 @@ import client.Personnel;
 public class GestionnairePromo {
 	
 	public static void ajouterPromoAdherent(PromoAdherent promo){
-		
+		Adherents.addPromo(promo);
 	}
 	
 	public static void retirerPromoAdherent(PromoAdherent promo){
-		//ToDo
+		Adherents.removePromo(promo);
 	}
 
 	public static void ajouterPromoPerso(PromoPerso promo){

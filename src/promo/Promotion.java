@@ -30,4 +30,12 @@ public abstract class Promotion {
 	}
 	
 	public abstract float calculerReduc();
+	
+	public String toString(){
+		StringBuilder msg = new StringBuilder();
+		msg.append("Promotion : ");
+		
+		return msg.toString;
+		
+	}
 }
