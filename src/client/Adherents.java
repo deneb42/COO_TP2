@@ -35,5 +35,15 @@ public class Adherents extends CatClient {
 		}
 		return 0;
 	}
+	
+	public String toString(){
+		StringBuilder msg = new StringBuilder();
+		msg.append(super.toString());
+		msg.append("\nNombre de points cumulés : ");
+		msg.append(points);
+		msg.append("\n");
+		
+		return msg.toString();
+	}
 
 }

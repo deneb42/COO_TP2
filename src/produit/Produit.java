@@ -23,8 +23,19 @@ public abstract class Produit {
 		return "Produit n°" + idProduit + " " + nom;
 	}
 	
-	
-	
+	public boolean equals(Object o) {
+		if(o==null)
+			return false;
+		if(o==this)
+			return true;
+		try {
+			Produit p = (Produit)o;
+			return this.idProduit==p.idProduit;
+		}
+		catch (ClassCastException e) {
+			return false;
+		}
+	}
 	
 	public void addPromo(Promotion p) { promos.add(p); }
 	
