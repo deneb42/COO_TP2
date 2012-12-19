@@ -59,7 +59,7 @@ public class Adherents extends CatClient {
 	}
 	public int getPoints(){return points;}
 	public int getSeuil() {return seuil;}
-	public float getRabais() {return rabais;}
+	public float getRabaisActu() {return points>seuil?rabais:0;}
 	
 	
 	public static void removePromo(PromoAdherent promo) { sesPromos.remove(promo); }

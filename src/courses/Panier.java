@@ -109,17 +109,12 @@ public class Panier {
 			}
 			totalReducPanier+=tmp;
 		}
+		try{
+			totalReducPanier+=((Adherents)sonClient.getCategorie()).getRabaisActu();
+		}catch(ClassCastException e) {}
+		
 		return totalReducPanier;
 	}
-	
-	/*int index=0;
-	for(Entry<Produit, Integer> e:sonPanier.getContenuPanier().entrySet()) {
-		index = sesPromos.indexOf(e.getKey());
-		if(index!=-1) {
-			reduc += sesPromos.get(index).calculerReduc()*e.getValue();
-			// on ajoute la reduction pour le produit trouvé * le nombre de produits.
-		}
-	}*/
 	
 	public void payerPanier(){
 		System.out.println("PAIEMENT DU PANIER\n" +

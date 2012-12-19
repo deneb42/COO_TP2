@@ -1,18 +1,17 @@
 package promo;
 
-public class PromoAdherent extends Promotion {
+import produit.Produit;
 
-	public PromoAdherent(String name, float red) {
+public class PromoAdherent extends Promotion {
+	private Produit pdt;
+	
+	public PromoAdherent(String name, float red, Produit p) {
 		super(name, red);
-		// TODO Auto-generated constructor stub
+		pdt = p;
 	}
 
 	@Override
 	public float calculerReduc() {
-		// TODO Auto-generated method stub
-		return 0;
+		return reduction * pdt.getPrix();
 	}
-
-	
-
 }
