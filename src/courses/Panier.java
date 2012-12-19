@@ -130,7 +130,7 @@ public class Panier {
 		
 		try {
 			int points = this.calculGainPoint();
-			((Adherents) sonClient.getCategorie()).consommerPoints( ((Adherents) sonClient.getCategorie()).getPoints() - ((Adherents) sonClient.getCategorie()).getSeuil());
+			((Adherents) sonClient.getCategorie()).consommerPoints();
 			((Adherents) sonClient.getCategorie()).ajouterPoints(points);
 			System.out.println("Cher adhérent aujourd'hui vous avez cumulé : " + points + " points.");
 		} catch (ClassCastException e) {}

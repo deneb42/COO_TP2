@@ -32,10 +32,10 @@ public class GestionnairePromo {
 	}
 	
 	public static void affichePromos(ArrayList<Produit> produits){
-		for(PromoPerso p : Personnel.getPromo()){
+		for(PromoPerso p : Personnel.getPromos()){
 			System.out.println(p.toString());
 		}
-		for(PromoAdherent p : Adherents.getPromo()){
+		for(PromoAdherent p : Adherents.getPromos()){
 			System.out.println(p.toString());
 		}
 		for(Produit prod : produits){
