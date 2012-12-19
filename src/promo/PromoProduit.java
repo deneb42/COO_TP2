@@ -2,27 +2,15 @@ package promo;
 
 public class PromoProduit extends Promotion {
 
-	protected float valeurReduc ;
+	protected float reduc ;
 	
-	public PromoProduit(String name, int id, float reduc) {
-		super(name, id, reduc);
-		this.valeurReduc = reduc;
+	public PromoProduit(String name, int id, float r) {
+		super(name, id, r);
+		this.reduc = r;
 	}
 
 	@Override
 	public float calculerReduc() {
-		// TODO Auto-generated method stub
-		return 0;
+		return reduc;
 	}
-
-	/*public int getValeurReduc() {
-		return valeurReduc;
-	}
-
-	public void setValeurReduc(int valeurReduc) {
-		this.valeurReduc = valeurReduc;
-	}*/
-
-	
-	
 }

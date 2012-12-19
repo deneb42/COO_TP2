@@ -4,11 +4,13 @@ import promo.Promotion;
 
 public abstract class Produit {
 	private static int nbProduit=0;
+	protected static Promotion promoCat;
+	
 	protected int idProduit;
 	protected float prix;
 	protected String nom;
 	protected int nbFidelite;
-	protected Promotion promo;
+	protected Promotion promoPdt;
 	
 	protected Produit(float p, String n, int nf) {
 		idProduit=nbProduit++;
@@ -35,16 +37,24 @@ public abstract class Produit {
 		} 
 	}
 	
-	public void setPromo(Promotion p) { promo = p; }
+	public float calculReduc() {
+		float reduc=0;
+		if(promoPdt!= null)
+			reduc = promoPdt.calculerReduc();
+		
+		if(promoCat!=null && promoPdt.calculerReduc()>reduc)
+			reduc = promoPdt.calculerReduc();
+		
+		return reduc;
+	}
+	
+	public void setPromoPdt(Promotion p) { promoPdt = p; }
+	public static void setPromoCat(Promotion p) { promoCat = p; }
 	
 	public int getIdProduit() { return idProduit; }
 	public float getPrix() { return prix; }
 	public String getNom() { return nom; }
 	public int getNbFidelite() { return nbFidelite; }
-	public Promotion getPromo() { return promo; }
-
-	public float calculReduc() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	public Promotion getPromoPdt() { return promoPdt; }
+	public static Promotion getPromoCat() { return promoCat; }
 }
