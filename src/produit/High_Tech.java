@@ -13,6 +13,8 @@ public class High_Tech extends Produit {
 		this(p, n, nbFidelDef, sp);
 	}
 	
+	public High_Tech() {}
+
 	public String toString() {
 		return super.toString() + " (High Tech), spécification : " + specTechniques;
 	}

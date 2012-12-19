@@ -7,6 +7,8 @@ public class Spectacle extends Produit {
 	private Date date;
 	private String lieu;
 	
+	public Spectacle() {}
+	
 	public Spectacle(float p, String n, int nf, Date d, String l) {
 		super(p, n, nf);
 		date = d;

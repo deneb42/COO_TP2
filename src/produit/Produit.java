@@ -13,6 +13,7 @@ public abstract class Produit {
 	protected int nbFidelite;
 	protected PromoProduit promoPdt;
 	
+	protected Produit() {}
 	protected Produit(float p, String n, int nf) {
 		idProduit=nbProduit++;
 		prix = p;

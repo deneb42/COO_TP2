@@ -13,6 +13,8 @@ public class CD extends Produit {
 		this(p, n, nbFidelDef, a);
 	}
 	
+	public CD() {}
+
 	@Override
 	public String toString() {
 		return super.toString() + " (CD), Artiste: " + artiste;
