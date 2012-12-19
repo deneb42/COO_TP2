@@ -30,14 +30,16 @@ public class Personnel extends CatClient {
 
 	@Override
 	public float calculReduc(Panier sonPanier) {
+		float reduc=0;
 		int index=0;
 		for(Entry<Produit, Integer> e:sonPanier.getContenuPanier().entrySet()) {
 			index = sesPromos.indexOf(e.getKey());
 			if(index!=-1) {
-				
+				reduc += sesPromos.get(index).calculerReduc()*e.getValue();
+				// on ajoute la reduction pour le produit trouvé * le nombre de produits.
 			}
 		}
-		return 0;
+		return reduc;
 	}
 
 	public void removePromo(PromoPerso promo) { sesPromos.remove(promo); }
