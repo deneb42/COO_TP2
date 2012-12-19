@@ -34,5 +34,7 @@ public class Personnel extends CatClient {
 	}
 
 	public static void removePromo(PromoPerso promo) { sesPromos.remove(promo); }
-	public static void addPromo(PromoPerso promo) { sesPromos.add(promo); }
+	public static void addPromo(PromoPerso promo) { sesPromos.add(promo);	}
+	public static ArrayList<PromoPerso> getPromos(){return sesPromos;}
+
 }
