@@ -100,16 +100,26 @@ public class Panier {
 	}
 	
 	public float calculReduc() {
-		float reduc = sonClient.getCategorie().calculReduc(this); // calcul des promos liées a la catégorie du client (personnel, adhérent)
+		float totalReducPanier = 0, tmp=0;
 		
 		for(Entry<Produit,Integer> e:contenuPanier.entrySet()) { // calcul des promos de produit
-			if(e.getKey().getPromo()!=null) {
-				reduc+=e.getKey().getPromo().calculerReduc()*e.getValue();
+			tmp = sonClient.getCategorie().calculReduc(e.getKey()); // récupère une eventuelle promo de compte sur ce produit
+			if(tmp==0) { // si on n'a pas trouvé de promo (priorité des promos)
+				tmp+=e.getKey().calculReduc();
 			}
+			totalReducPanier+=tmp;
 		}
-		totalReducPanier = reduc;
-		return reduc;
+		return totalReducPanier;
 	}
+	
+	/*int index=0;
+	for(Entry<Produit, Integer> e:sonPanier.getContenuPanier().entrySet()) {
+		index = sesPromos.indexOf(e.getKey());
+		if(index!=-1) {
+			reduc += sesPromos.get(index).calculerReduc()*e.getValue();
+			// on ajoute la reduction pour le produit trouvé * le nombre de produits.
+		}
+	}*/
 	
 	public void payerPanier(){
 		System.out.println("PAIEMENT DU PANIER\n" +

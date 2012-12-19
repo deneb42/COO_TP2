@@ -42,4 +42,9 @@ public abstract class Produit {
 	public String getNom() { return nom; }
 	public int getNbFidelite() { return nbFidelite; }
 	public Promotion getPromo() { return promo; }
+
+	public float calculReduc() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
