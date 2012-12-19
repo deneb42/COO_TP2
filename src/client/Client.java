@@ -19,7 +19,7 @@ public class Client {
 		this.categorie = cat;
 		this.id = id;
 		this.telephone = telephone;	
-		sonPanier = new Panier();
+		sonPanier = new Panier(this);
 	}
 	
 	public void connexion(){
