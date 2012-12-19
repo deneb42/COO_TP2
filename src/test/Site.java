@@ -102,6 +102,27 @@ public class Site {
 		System.out.println(c4.getSonPanier().toString());
 		c4.getSonPanier().payerPanier();
 		/* *********************************** */
+	
+		
+		/* Test le passage d'un client anonyme à un adhérent en conservant le panier => calcul de nouvelle réduc */
+		System.out.println("------------------------------------");
+		System.out.println("Test log et conservation du panier"); // on suppose qu'il s'est connecté avant
+		Client c5= clients.get(3);
+		System.out.println(c5.toString());
+		
+		c5.getSonPanier().ajouterProduit(produits.get(4));
+		c5.getSonPanier().ajouterProduit(produits.get(7));
+		c5.getSonPanier().ajouterProduit(produits.get(5));
+		c5.getSonPanier().ajouterProduit(produits.get(2));
+		System.out.println(c5.getSonPanier().toString());
+		
+		c5.connexion(Adherents.getCat()); //connexion et on suppose que le client à déjà des points de cumulé
+		((Adherents) c5.getCategorie()).ajouterPoints(100);
+		System.out.println(c5.toString());
+		System.out.println(c5.getSonPanier().toString());
+		
+		c5.getSonPanier().payerPanier();
+		/* *********************************** */
 		
 	}
 
