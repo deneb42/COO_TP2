@@ -11,7 +11,6 @@ public abstract class CatClient {
 
 	public abstract void connexion();
 	public abstract int calculReduc();
-	public abstract CatClient getCat();
 	
 	
 	public String toString() {

@@ -1,16 +1,21 @@
 package client;
 
 public class Adherents extends CatClient {
-	static private int seuil = 100;
+	private static int seuil = 100;
+	private static int nbAdherent=0;
 	
 	private int points;
 	private int rabais;
 	
-	public Adherents(String nom,int rabais) {
+	private Adherents(String nom) {//int rabais) {
 		super(nom);
 		points = 0;
-		this.rabais = rabais;	
+		//this.rabais = rabais;	
 		propCat = "Personnes ayant adhérées au site, elles cumulent des points pour bénéficier de reductions.";
+	}
+	
+	static public CatClient getCat() {
+		return new Adherents("adherent n°" + nbAdherent);
 	}
 	
 	public void ajouterPoints(int points){ 
@@ -22,7 +27,7 @@ public class Adherents extends CatClient {
 	}
 
 	public int calculReduc() {
-		float reduc = 0;
+		//float reduc = 0;
 		
 		if(points >= seuil){
 			return rabais;
