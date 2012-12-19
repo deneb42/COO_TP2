@@ -3,7 +3,7 @@ package promo;
 import produit.*;
 
 public class PromoPerso extends Promotion {
-	Produit pdt;
+	private Produit pdt;
 	
 	public PromoPerso(String name, float red, Produit p) {//ici reduction est un pourcentage et dooit donc etre inf à 1.
 		super(name, red);
