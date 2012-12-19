@@ -23,7 +23,7 @@ public class Personnel extends CatClient {
 
 
 	@Override
-	public int calculReduc() {
+	public float calculReduc() {
 		//Todo
 		return 0;
 	}

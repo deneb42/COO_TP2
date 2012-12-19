@@ -14,7 +14,7 @@ public class TestPanier { // deprecated
 
 	public static void main(String[] args) {
 		
-		Client c1 = new Client("BADIE", "Jean", "jean.badie@gmail.com", "0607080910", 1, Simple.getCat());
+		Client c1 = new Client("BADIE", "Jean", "jean.badie@gmail.com", "0607080910", Simple.getCat());
 		ArrayList<Produit> listProduit = new ArrayList<Produit>();
 		System.out.println(c1.toString());
 		Produit p1 = new CD(1, 22.50f, "Bobby Lapointe Live", "Bobby Lapointe");

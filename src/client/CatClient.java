@@ -9,7 +9,7 @@ public abstract class CatClient {
 		nomCat = nom;	
 	}
 
-	public abstract int calculReduc();
+	public abstract float calculReduc();
 	
 	
 	public String toString() {

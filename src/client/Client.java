@@ -3,7 +3,8 @@ package client;
 import courses.Panier;
 
 public class Client {
-
+	private static int nbClient=0;
+	
 	private String nom;
 	private String prenom;
 	private String email;
@@ -12,12 +13,13 @@ public class Client {
 	private CatClient categorie;
 	private Panier sonPanier;
 	
-	public Client(String nom, String prenom, String email, String telephone, int id, CatClient cat) {
+	public Client(String nom, String prenom, String email, String telephone, CatClient cat) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.categorie = cat;
-		this.id = id;
+		this.id = nbClient;
+		nbClient++;
 		this.telephone = telephone;	
 		sonPanier = new Panier(this);
 	}

@@ -18,7 +18,7 @@ public class Simple extends CatClient {
 
 
 	@Override
-	public int calculReduc() {	
+	public float calculReduc() {	
 		return 0;
 	}
 }
