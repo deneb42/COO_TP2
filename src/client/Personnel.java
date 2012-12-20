@@ -4,21 +4,27 @@ import java.util.ArrayList;
 
 import produit.Produit;
 import promo.PromoPerso;
-
+/**
+ * 
+ * @author BADIE & BLOIS
+ *
+ */
 public class Personnel extends CatClient {
 
 	private static Personnel singleton;
 	private static ArrayList<PromoPerso> sesPromos = new ArrayList<PromoPerso>();
 	
+	/**
+	 * Constructeur
+	 * @param nom
+	 */
 	private Personnel(String nom) {
 		super(nom, "Personnes travaillant pour le site, elles bénéficient de réductions spécifiques sur les produits");
-		//saPromo = new PromoPerso("perso", 1, 2.0f);
 	}
 	
 	public static CatClient getCat() {
 		if(singleton==null)
 			singleton = new Personnel("Personnel");
-		
 		return singleton;
 	}
 

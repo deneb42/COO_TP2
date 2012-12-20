@@ -1,11 +1,16 @@
 package client;
 
+import java.util.Collection;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.Set;
 
 import courses.Panier;
 
+/**
+ * Represente un client
+ * @author BADIE & BLOIS
+ *
+ */
 public class Client extends Observable{
 	private static int nbClient=0;
 	
@@ -17,7 +22,16 @@ public class Client extends Observable{
 	private CatClient categorie;
 	private Panier sonPanier;
 	
-	public Client(String nom, String prenom, String email, String telephone, CatClient cat, Set<Observer> obs) {
+	/**
+	 * Constructeur incluant la gestion des observeur
+	 * @param nom
+	 * @param prenom
+	 * @param email
+	 * @param telephone
+	 * @param cat
+	 * @param obs
+	 */
+	public Client(String nom, String prenom, String email, String telephone, CatClient cat, Collection<Observer> obs) {
 		this(nom, prenom, email, telephone, cat);
 		for(Observer o:obs) {
 			addObserver(o);
@@ -25,6 +39,14 @@ public class Client extends Observable{
 		}
 	}
 	
+	/**
+	 * Constructeur
+	 * @param nom
+	 * @param prenom
+	 * @param email
+	 * @param telephone
+	 * @param cat
+	 */
 	public Client(String nom, String prenom, String email, String telephone, CatClient cat) {
 		this.nom = nom;
 		this.prenom = prenom;
@@ -35,12 +57,20 @@ public class Client extends Observable{
 		sonPanier = new Panier(this);
 	}
 	
+	/**
+	 * Permet a un client simple de ce connecter
+	 * @param cat
+	 */
 	public void connexion(CatClient cat){
 		setChanged();
 		notifyObservers();
 		categorie = cat;
 		sonPanier.calculReduc();
 	}
+	
+	/**
+	 * Permet à un adherent ou un membre du personnel de se deconnecter
+	 */
 	public void deconnexion(){
 		setChanged();
 		notifyObservers();
