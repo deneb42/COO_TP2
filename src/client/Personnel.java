@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 import produit.Produit;
 import promo.PromoPerso;
+
 /**
  * 
  * @author BADIE & BLOIS
  *
  */
 public class Personnel extends CatClient {
-
 	private static Personnel singleton;
 	private static ArrayList<PromoPerso> sesPromos = new ArrayList<PromoPerso>();
 	
@@ -38,7 +38,7 @@ public class Personnel extends CatClient {
 	}
 
 	public static void removePromo(PromoPerso promo) { sesPromos.remove(promo); }
-	public static void addPromo(PromoPerso promo) { sesPromos.add(promo);	}
-	public static ArrayList<PromoPerso> getPromos(){return sesPromos;}
+	public static void addPromo(PromoPerso promo) { sesPromos.add(promo); }
+	public static ArrayList<PromoPerso> getPromos(){ return sesPromos; }
 
 }
