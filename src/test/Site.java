@@ -11,7 +11,12 @@ import client.Client;
  *
  */
 public class Site {
-	
+
+		
+	/**
+	 * @param args
+	 * Classe de test du programme : va émuler le site.
+	 */
 
 	public static void main(String[] args) {	
 		
@@ -21,7 +26,7 @@ public class Site {
 		ArrayList<Client> clients = TestClient.populeClient();	
 		TestAlerte.creerAlertes(produits, clients);
 		/* *********************************** */
-		
+
 		
 		EnsembleTest.ajoutPanierSimple(clients, produits); //Test des ajouts et suppression simple dans le panier.
 		System.out.println("**********************************************************************");
@@ -41,6 +46,9 @@ public class Site {
 		
 		EnsembleTest.logPersonnelAvecPanier(clients, produits); //test le passage d'un client simple à un personnel 
 																//en conservant panier et recalcul des promos.
+		System.out.println("**********************************************************************");
+		
+		EnsembleTest.promoCatProduit(clients, produits); // test sur les conditions de promo catégorie
 		System.out.println("**********************************************************************");
 		
 		EnsembleTest.testCondPromoFlashReunies(clients, produits); //test avec les conditions d'une promo flash réunie.

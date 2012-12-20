@@ -74,13 +74,13 @@ public abstract class Produit {
 	}
 	
 	public void setPromoPdt(PromoProduit p) { promoPdt = p; }
-	public void setPromoCat(PromoProduit p) { promoCat = p; }
+	public abstract void setPromoCat(PromoProduit p);
 	
 	public int getIdProduit() { return idProduit; }
 	public float getPrix() { return prix; }
 	public String getNom() { return nom; }
 	public int getNbFidelite() { return nbFidelite; }
 	public Promotion getPromoPdt() { return promoPdt; }
-	public static Promotion getPromoCat() { return promoCat; }
+	public abstract Promotion getPromoCat();
 	
 }

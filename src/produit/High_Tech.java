@@ -1,5 +1,9 @@
 package produit;
 
+
+import promo.PromoProduit;
+import promo.Promotion;
+
 /**
  *Classe representant la categorie de produits High Tech 
  * @author BADIE & BLOIS
@@ -7,6 +11,7 @@ package produit;
  */
 public class High_Tech extends Produit {
 	static final int nbFidelDef=15;
+	protected static PromoProduit promoCat;
 	String specTechniques;
 	
 	/**
@@ -39,4 +44,7 @@ public class High_Tech extends Produit {
 	public String toString() {
 		return super.toString() + " (High Tech), spécification : " + specTechniques;
 	}
+	
+	public void setPromoCat(PromoProduit p) { promoCat = p; }
+	public Promotion getPromoCat() { return promoCat; }
 }

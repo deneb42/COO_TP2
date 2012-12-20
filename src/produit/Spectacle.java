@@ -2,6 +2,9 @@ package produit;
 
 import java.util.Date;
 
+import promo.PromoProduit;
+import promo.Promotion;
+
 /**
  * Produit de type spectacle
  * @author BADIE & BLOIS
@@ -9,6 +12,7 @@ import java.util.Date;
  */
 public class Spectacle extends Produit {
 	static final int nbFidelDef=10;
+	protected static PromoProduit promoCat;
 	private Date date;
 	private String lieu;
 	
@@ -45,4 +49,7 @@ public class Spectacle extends Produit {
 	public String toString() {
 		return super.toString() + " (Spectacle), date: " + date.toString() + ", lieu: " + lieu;
 	}
+	
+	public void setPromoCat(PromoProduit p) { promoCat = p; }
+	public Promotion getPromoCat() { return promoCat; }
 }
