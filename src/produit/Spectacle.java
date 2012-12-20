@@ -11,15 +11,11 @@ import promo.Promotion;
  *
  */
 public class Spectacle extends Produit {
-	static final int nbFidelDef=10;
+	private static final int nbFidelDef=10; // valeur par defaut de gain de point de fidelité
 	protected static PromoProduit promoCat;
+	
 	private Date date;
 	private String lieu;
-	
-	/**
-	 * Constructeur ar défaut
-	 */
-	public Spectacle() {}
 	
 	/**
 	 * Constructeur
@@ -46,6 +42,13 @@ public class Spectacle extends Produit {
 		this(p, n, nbFidelDef, d, l);
 	}
 	
+	/**
+	 * Constructeur par défaut
+	 * Utilisé pour appliquer des promotions de catégorie
+	 */
+	public Spectacle() {}
+	
+	@Override
 	public String toString() {
 		return super.toString() + " (Spectacle), date: " + date.toString() + ", lieu: " + lieu;
 	}

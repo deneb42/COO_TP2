@@ -10,14 +10,10 @@ import promo.Promotion;
  *
  */
 public class Livre extends Produit {
-	static final int nbFidelDef=5;
+	private static final int nbFidelDef=5; // valeur par defaut de gain de point de fidelité
 	protected static PromoProduit promoCat;
-	private String auteur, resume;
 	
-	/**
-	 * Constructeur par défaut
-	 */
-	public Livre() {}
+	private String auteur, resume;
 			
 	/**
 	 * Constructeur
@@ -44,6 +40,13 @@ public class Livre extends Produit {
 		this(p, n, nbFidelDef, a, r);
 	}
 	
+	/**
+	 * Constructeur par défaut
+	 * Utilisé pour appliquer des promotions de catégorie
+	 */
+	public Livre() {}
+	
+	@Override
 	public String toString() {
 		return super.toString() + " (Livre), auteur: " + auteur + ", résumé : " + resume;
 	}

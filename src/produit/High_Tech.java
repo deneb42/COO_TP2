@@ -1,6 +1,5 @@
 package produit;
 
-
 import promo.PromoProduit;
 import promo.Promotion;
 
@@ -10,9 +9,10 @@ import promo.Promotion;
  *
  */
 public class High_Tech extends Produit {
-	static final int nbFidelDef=15;
+	private static final int nbFidelDef=15; // valeur par defaut de gain de point de fidelité
 	protected static PromoProduit promoCat;
-	String specTechniques;
+	
+	protected String specTechniques;
 	
 	/**
 	 * Constructeur
@@ -38,9 +38,11 @@ public class High_Tech extends Produit {
 	
 	/**
 	 * Constructeur par défaut
+	 * Utilisé pour appliquer des promotions de catégorie
 	 */
 	public High_Tech() {}
 
+	@Override
 	public String toString() {
 		return super.toString() + " (High Tech), spécification : " + specTechniques;
 	}

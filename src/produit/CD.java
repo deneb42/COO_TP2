@@ -1,6 +1,5 @@
 package produit;
 
-
 import promo.PromoProduit;
 import promo.Promotion;
 
@@ -10,10 +9,10 @@ import promo.Promotion;
  *
  */
 public class CD extends Produit {
-	static final int nbFidelDef=2;
+	private static final int nbFidelDef=2; // valeur par defaut de gain de point de fidelité
 	protected static PromoProduit promoCat;
 	
-	String artiste;
+	protected String artiste;
 	
 	/**
 	 * Constructeur
@@ -39,6 +38,7 @@ public class CD extends Produit {
 	
 	/**
 	 * Constructeur par défaut
+	 * Utilisé pour appliquer des promotions de catégorie
 	 */
 	public CD() {}
 

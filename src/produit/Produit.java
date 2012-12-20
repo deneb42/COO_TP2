@@ -9,7 +9,7 @@ import promo.Promotion;
  *
  */
 public abstract class Produit {
-	private static int nbProduit=0;
+	private static int nbProduit=0; // valeur par defaut de gain de point de fidelité
 	protected static PromoProduit promoCat;
 	
 	protected int idProduit;
@@ -17,11 +17,6 @@ public abstract class Produit {
 	protected String nom;
 	protected int nbFidelite;
 	protected PromoProduit promoPdt;
-	
-	/**
-	 * Constructeur par defaut
-	 */
-	protected Produit() {}
 	
 	/**
 	 * Constructeur
@@ -36,6 +31,13 @@ public abstract class Produit {
 		nbFidelite=nf;
 	}
 	
+	/**
+	 * Constructeur par defaut
+	 * Utilisé pour appliquer des promotions de catégorie
+	 */
+	protected Produit() {}
+	
+	@Override
 	public String toString() {
 		return "Produit n°" + idProduit + " " + nom;
 	}
