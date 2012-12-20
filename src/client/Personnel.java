@@ -11,9 +11,8 @@ public class Personnel extends CatClient {
 	private static ArrayList<PromoPerso> sesPromos = new ArrayList<PromoPerso>();
 	
 	private Personnel(String nom) {
-		super(nom);
+		super(nom, "Personnes travaillant pour le site, elles bénéficient de réductions spécifiques sur les produits");
 		//saPromo = new PromoPerso("perso", 1, 2.0f);
-		propCat = "Personnes travaillant pour le site, elles bénéficient de réductions spécifiques sur les produits";
 	}
 	
 	public static CatClient getCat() {

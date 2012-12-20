@@ -13,8 +13,7 @@ public class Simple extends CatClient {
 	private static Simple singleton;
 	
 	private Simple(String nom) {
-		super(nom);
-		propCat = "Personne visitant le site exceptionnellement, ne bénéficient pas du cumul des points.";
+		super(nom, "Personne visitant le site exceptionnellement, ne bénéficient pas du cumul des points.");
 	}
 	
 	public static CatClient getCat() {

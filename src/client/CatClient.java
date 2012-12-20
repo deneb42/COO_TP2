@@ -5,10 +5,11 @@ import produit.Produit;
 public abstract class CatClient {
 	
 	private String nomCat;
-	protected String propCat;
+	private String propCat;
 	
-	protected CatClient(String nom) {
-		nomCat = nom;	
+	protected CatClient(String nomCat, String propCat) {
+		this.nomCat = nomCat;
+		this.propCat = propCat;
 	}
 
 	public abstract float calculReduc(Produit p);
