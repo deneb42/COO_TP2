@@ -38,7 +38,7 @@ public class Site {
 //		EnsembleTest.logPersonnelAvecPanier(clients, produits); //test le passage d'un client simple à un personnel 
 																//en conservant panier et recalcul des promos.
 		
-
+		EnsembleTest.testCondPromoFlashReunies(clients, produits); //test avec les conditions d'une promo flash réunie.
 		
 	}
 

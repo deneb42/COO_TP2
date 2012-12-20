@@ -38,10 +38,10 @@ public class TestPromos {
 		HashMap<Produit, Integer> hashTmp = new HashMap<Produit, Integer>();
 		hashTmp.put(produits.get(0), 1);
 		hashTmp.put(produits.get(5), 1);
-		GestionnairePromo.ajouterPromoFlash(new PromoFlash("promoFlash Lapointe", 0.2f, hashTmp));
+		GestionnairePromo.ajouterPromoFlash(new PromoFlash("promoFlash Lapointe", 10f, hashTmp));
 		hashTmp.clear();
 		hashTmp.put(produits.get(3), 3);
-		GestionnairePromo.ajouterPromoFlash(new PromoFlash("promoFlash Tri Yann", 0.5f, hashTmp));
+		GestionnairePromo.ajouterPromoFlash(new PromoFlash("promoFlash Tri Yann", 20f, hashTmp));
 		
 		
 //	GestionnairePromo.affichePromos(produits);
