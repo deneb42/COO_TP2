@@ -6,7 +6,6 @@ package promo;
  *
  */
 public class PromoProduit extends Promotion {
-
 	protected float reduc ;
 	
 	/**
@@ -24,6 +23,7 @@ public class PromoProduit extends Promotion {
 		return reduc;
 	}
 	
+	@Override
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
 		msg.append(super.toString());

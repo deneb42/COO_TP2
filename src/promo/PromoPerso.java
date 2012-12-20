@@ -26,6 +26,7 @@ public class PromoPerso extends Promotion {
 		return reduction * pdt.getPrix();
 	}
 	
+	@Override
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
 		msg.append(super.toString());

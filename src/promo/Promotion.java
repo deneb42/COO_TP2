@@ -47,6 +47,7 @@ public abstract class Promotion {
 	 */
 	public abstract float calculerReduc();
 	
+	@Override
 	public String toString(){
 		StringBuilder msg = new StringBuilder();
 		msg.append("Promotion N° ");
@@ -58,6 +59,5 @@ public abstract class Promotion {
 		msg.append("\n");
 		
 		return msg.toString();
-		
 	}
 }

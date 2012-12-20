@@ -13,8 +13,6 @@ import courses.Panier;
  *
  */
 public class GestionnairePromo {
-	
-	
 	public static void ajouterPromoAdherent(PromoAdherent promo){
 		Adherents.addPromo(promo);
 	}
@@ -34,6 +32,7 @@ public class GestionnairePromo {
 	public static void ajouterPromoProduit(Produit prod, PromoProduit promo){
 		prod.setPromoPdt(promo);
 	}
+	
 	public static void SupprimerPromoProduit(Produit prod){
 		prod.setPromoPdt(null);
 	}
@@ -60,7 +59,6 @@ public class GestionnairePromo {
 	
 	public static void affichePromos(ArrayList<Produit> produits){
 		System.out.println("--- Listes des promotions ---");
-		
 		System.out.println(promosPersotoString());
 		System.out.println(promosAdherenttoString());
 		System.out.println(PromosProduitstoString(produits));
@@ -74,9 +72,9 @@ public class GestionnairePromo {
 			msg.append(p.toString());
 			msg.append("\n");
 		}
-		
 		return msg.toString();
 	}
+	
 	public static String promosAdherenttoString(){
 		StringBuilder msg = new StringBuilder();
 		msg.append("- Promos adherent -\n");
@@ -85,7 +83,6 @@ public class GestionnairePromo {
 			msg.append("\n");
 		}
 		return msg.toString();
-		
 	}
 	
 	public static String PromosProduitstoString(ArrayList<Produit> produits){
@@ -98,8 +95,8 @@ public class GestionnairePromo {
 			}
 		}
 		return msg.toString();
-		
 	}
+	
 	public static String PromosFlashtoString(ArrayList<Produit> produits){
 		StringBuilder msg = new StringBuilder();
 		msg.append("- Promos Flash -\n");
@@ -109,9 +106,5 @@ public class GestionnairePromo {
 			msg.append("\n");
 		}
 		return msg.toString();
-		
-	}
-
-	
-			
+	}	
 }

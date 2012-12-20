@@ -11,8 +11,7 @@ import produit.Produit;
  *
  */
 public class PromoFlash extends Promotion {
-
-	HashMap<Produit, Integer> pdtsCible;
+	private HashMap<Produit, Integer> pdtsCible;
 	
 	/**
 	 * Constructeur
@@ -40,6 +39,7 @@ public class PromoFlash extends Promotion {
 		return reduction;
 	}
 
+	@Override
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
 		msg.append(super.toString());
@@ -79,6 +79,7 @@ public class PromoFlash extends Promotion {
 	public void AddProduit(Produit p, int qte) { // si le produit est deja dans la table, sa quantité est maj
 		pdtsCible.put(p, qte);
 	}
+	
 	/**
 	 * Supprime un produit de la promo
 	 * @param p
