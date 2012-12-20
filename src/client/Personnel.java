@@ -14,7 +14,6 @@ public class Personnel extends CatClient {
 		super(nom);
 		//saPromo = new PromoPerso("perso", 1, 2.0f);
 		propCat = "Personnes travaillant pour le site, elles bénéficient de réductions spécifiques sur les produits";
-		sesPromos = new ArrayList<PromoPerso>();
 	}
 	
 	public static CatClient getCat() {

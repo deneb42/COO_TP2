@@ -3,6 +3,7 @@ package test;
 import java.util.ArrayList;
 
 import produit.Produit;
+import promo.GestionnairePromo;
 import client.Client;
 
 public class Site {
@@ -26,7 +27,10 @@ public class Site {
 		TestPromos.creerPromos(produits);
 		ArrayList<Client> clients = TestClient.populeClient();	
 		TestAlerte.creerAlertes(produits, clients);
+
 		/* *********************************** */
+		
+		GestionnairePromo.affichePromos(produits);
 		
 //		EnsembleTest.ajoutPanierSimple(clients, produits); //Test des ajouts et suppression simple dans le panier.
 		
