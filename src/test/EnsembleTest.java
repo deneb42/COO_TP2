@@ -155,8 +155,7 @@ public class EnsembleTest {
 	
 	public static void testCondPromoFlashReunies(ArrayList<Client> clients, ArrayList<Produit> produits){
 		
-		System.out.println(GestionnairePromo.PromosFlashtoString(produits));
-		
+			
 		System.out.println("------------------------------------");
 		System.out.println("Test dans le conditions de le Promo Flash LaPointe pour un client visiteur"); 
 		Client c= clients.get(3);

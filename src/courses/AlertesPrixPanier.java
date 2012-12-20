@@ -5,9 +5,9 @@ import java.util.Observer;
 
 public class AlertesPrixPanier implements Observer{
 
-	private int seuil;
+	private float seuil;
 	
-	public AlertesPrixPanier(int s) {
+	public AlertesPrixPanier(float s) {
 		seuil=s;
 	}
 	
