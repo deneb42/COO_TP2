@@ -4,6 +4,8 @@ import produit.Produit;
 /**
  * 
  * @author BADIE & BLOIS
+ * 
+ * Classe représentant un client simple visiteur
  *
  */
 public class Simple extends CatClient {
