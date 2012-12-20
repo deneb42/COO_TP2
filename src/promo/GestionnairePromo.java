@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import produit.Produit;
 import client.Adherents;
 import client.Personnel;
+import courses.Panier;
 
 public class GestionnairePromo {
 	
@@ -35,11 +36,16 @@ public class GestionnairePromo {
 		prod.setPromoCat(promo);
 	}
 	
-	public static void supprimerPomoCat(Produit prod){
+	public static void supprimerPromoCat(Produit prod){
 		prod.setPromoCat(null);
 	}
 	
-// et promoFlash
+	public static void ajouterPromoFlash(PromoFlash promo){
+		Panier.addPromoFlash(promo);
+	}
+	public static void SupprimerPromoFlash(PromoFlash promo){
+		Panier.removePromoFlash(promo);
+	}
 		
 	
 	/* **********************************************

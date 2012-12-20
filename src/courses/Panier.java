@@ -3,6 +3,7 @@ package courses;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
+import java.util.Observable;
 
 import produit.Produit;
 import promo.PromoFlash;
@@ -10,7 +11,7 @@ import client.Adherents;
 import client.Client;
 import exceptions.NoArticleException;
 
-public class Panier {
+public class Panier extends Observable {
 	private static ArrayList<PromoFlash> pFlash;
 	private Client sonClient;
 	private HashMap<Produit, Integer> contenuPanier; //produit et quantité.
@@ -148,8 +149,8 @@ public class Panier {
 	/* ******************************
 	 * Getter et Setter
 	 ****************************** */
-	public void addPromoFlash(PromoFlash pf) { pFlash.add(pf); }
-	public void removePromoFlash(PromoFlash pf) { pFlash.remove(pf); }
+	public static void addPromoFlash(PromoFlash pf) { pFlash.add(pf); }
+	public static void removePromoFlash(PromoFlash pf) { pFlash.remove(pf); }
 	
 	public void setContenuPanier(HashMap<Produit, Integer> contenuPanier) { this.contenuPanier = contenuPanier; }
 	public void setMontantTotal(float montantTotal) { this.montantSsReduc = montantTotal; }
