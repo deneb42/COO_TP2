@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import courses.AlerteConnection;
 import courses.AlerteQtePdt;
-import courses.AlertesPrixPanier;
+import courses.AlertePrixPanier;
 import courses.GestionnaireAlertes;
 
 import produit.Produit;
@@ -31,6 +31,6 @@ public class TestAlerte {
 		GestionnaireAlertes.ajouterObserveur(new AlerteQtePdt(produits.get(1), 2), clients);
 		
 		/* creation d'une alerte surveillance montant panier */
-		GestionnaireAlertes.ajouterObserveur(new AlertesPrixPanier(1000f), clients);
+		GestionnaireAlertes.ajouterObserveur(new AlertePrixPanier(1000f), clients);
 	}
 }
