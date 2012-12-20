@@ -3,6 +3,7 @@ package test;
 import java.util.ArrayList;
 
 import produit.Produit;
+import promo.GestionnairePromo;
 import client.Client;
 
 public class Site {
@@ -17,7 +18,10 @@ public class Site {
 		ArrayList<Produit> produits = TestProduit.populeProduits();
 		TestPromos.creerPromos(produits);
 		ArrayList<Client> clients = TestClient.populeClient();		
+		
 		/* *********************************** */
+		
+		GestionnairePromo.affichePromos(produits);
 		
 //		EnsembleTest.ajoutPanierSimple(clients, produits); //Test des ajouts et suppression simple dans le panier.
 		
@@ -31,7 +35,7 @@ public class Site {
 //		EnsembleTest.logAdherentAvecPanier(clients, produits); //test le passage d'un client simple à un adhérent 
 															//en conservant panier et recalcul des promos.
 		
-		EnsembleTest.logPersonnelAvecPanier(clients, produits); //test le passage d'un client simple à un personnel 
+//		EnsembleTest.logPersonnelAvecPanier(clients, produits); //test le passage d'un client simple à un personnel 
 																//en conservant panier et recalcul des promos.
 		
 

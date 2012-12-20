@@ -1,6 +1,6 @@
 package promo;
 
-import produit.*;
+import produit.Produit;
 
 public class PromoPerso extends Promotion {
 	private Produit pdt;
@@ -23,5 +23,4 @@ public class PromoPerso extends Promotion {
 		msg.append("\n");
 		return msg.toString();
 	}
-
 }

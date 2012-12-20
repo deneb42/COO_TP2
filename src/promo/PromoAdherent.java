@@ -10,11 +10,10 @@ public class PromoAdherent extends Promotion {
 		pdt = p;
 	}
 
-	
+	@Override
 	public float calculerReduc() {
 		return reduction * pdt.getPrix();
 	}
-	
 	
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
