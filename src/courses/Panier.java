@@ -11,6 +11,12 @@ import client.Adherents;
 import client.Client;
 import exceptions.NoArticleException;
 
+/**
+ * Modelise le panier du client
+ * @author BADIE & BLOIS
+ *
+ */
+
 public class Panier extends Observable {
 	private static ArrayList<PromoFlash> pFlash = new ArrayList<PromoFlash>();
 	private Client sonClient;
@@ -18,17 +24,31 @@ public class Panier extends Observable {
 	private float montantSsReduc;
 	private float totalReducPanier;
 	
+	/**
+	 * Constructeur
+	 * @param c
+	 */
 	public Panier(Client c) {
 		sonClient = c;
 		contenuPanier = new HashMap<Produit, Integer>();
 		montantSsReduc = 0;
 		totalReducPanier = 0;
 	}
+	
+	/**
+	 * Constructeur avec ajout immédiat d'un produit
+	 * @param c
+	 * @param p
+	 */
 	public Panier (Client c, Produit p){
 		this(c);
 		ajouterProduit(p);
 	}
 	
+	/**
+	 * Ajout d'un produit au panier puis appelle le calcul des reduction
+	 * @param p
+	 */
 	public void ajouterProduit(Produit p){
 		if(contenuPanier.containsKey(p)){//l'article est déjà dans le panier
 			int nbTmp = contenuPanier.get(p);
@@ -42,9 +62,13 @@ public class Panier extends Observable {
 		this.calculReduc();
 		setChanged();
 		notifyObservers();
-//		System.out.println("Mise à jour du panier : " + this.toString());
 	}
 
+	/**
+	 * Retire un produit au panier puis appelle le calcul des reduction
+	 * @param p
+	 * @throws NoArticleException
+	 */
 	public void retirerProduit(Produit p) throws NoArticleException{
 		if(contenuPanier.containsKey(p)){
 			if(contenuPanier.get(p)>1){//on a plus de 2 fois le produit dans le panier, on en enlève une.
@@ -61,7 +85,6 @@ public class Panier extends Observable {
 			}
 		}
 		else throw new NoArticleException("le panier ne contient pas cet article");	
-//		System.out.println("Mise à jour du panier : " + this.toString());
 		setChanged();
 		notifyObservers();
 	}
@@ -88,12 +111,11 @@ public class Panier extends Observable {
 		
 		return msg.toString();
 	}
-	
-	/*public void appliquerReduc(float valeur){
-		montantSsReduc -= valeur;
-		totalReducPanier += valeur;
-	}*/
-	
+
+	/**
+	 * Calcul le gain des points sur l'ensemble du panier
+	 * @return
+	 */
 	public int calculGainPoint(){
 		int totalPt = 0;
 		for(Produit p : contenuPanier.keySet()){
@@ -102,15 +124,17 @@ public class Panier extends Observable {
 		return totalPt;
 	}
 	
+	/**
+	 * Pour tous les produits du paniers et toutes les reductions, calcul les reduction possible
+	 * @return
+	 */
 	public float calculReduc() {
 		float tmp=0; 
 		totalReducPanier = 0;
-				
 		for(int i=0;i<pFlash.size();i++) {
 			totalReducPanier+=pFlash.get(i).calculerReduc()*pFlash.get(i).nbOcc(contenuPanier);
 			// si pas de reduc, nb=0 donc non prise en compte de la reduc.
 		}
-		
 		for(Entry<Produit,Integer> e:contenuPanier.entrySet()) { // calcul des promos de produit
 			tmp = sonClient.getCategorie().calculReduc(e.getKey()); // récupère une eventuelle promo de compte sur ce produit
 			if(tmp==0) { // si on n'a pas trouvé de promo (priorité des promos)
@@ -121,11 +145,13 @@ public class Panier extends Observable {
 		try{
 			totalReducPanier += ((Adherents)sonClient.getCategorie()).getRabaisActu();
 		}catch(ClassCastException e) {}
-		
-		
+	
 		return totalReducPanier;
 	}
 	
+	/**
+	 * Modélise le paiement du panier, consomme les points, ajoute les points obtenu et réinitialise le panier
+	 */
 	public void payerPanier(){
 		System.out.println("PAIEMENT DU PANIER\n" +
 				"Envoi vers le module de paiement en ligne\n" +
@@ -142,6 +168,9 @@ public class Panier extends Observable {
 		viderPanier();
 	}
 	
+	/**
+	 * 
+	 */
 	public void viderPanier(){
 		this.contenuPanier.clear();
 		this.montantSsReduc = 0;

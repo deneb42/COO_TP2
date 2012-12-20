@@ -5,7 +5,18 @@ import java.util.Observer;
 
 import client.Client;
 
+/**
+ * Permet de gérer les alertes
+ * @author BADIE & BLOIS
+ *
+ */
 public class GestionnaireAlertes {
+	
+	/**
+	 * Permet d'ajouter des Observer
+	 * @param o
+	 * @param clients
+	 */
 	public static void ajouterObserveur(Observer o, Collection<Client> clients) {
 		for(Client c:clients) {
 			c.getSonPanier().addObserver(o);
@@ -13,17 +24,15 @@ public class GestionnaireAlertes {
 		}
 	}
 	
+	/**
+	 * Permet de retirer des observer
+	 * @param o
+	 * @param clients
+	 */
 	public static void removeObserveur(Observer o, Collection<Client> clients) {
 		for(Client c:clients) {
 			c.getSonPanier().deleteObserver(o);
 			c.deleteObserver(o);
 		}
 	}
-	/*
-	public static void afficheObserveurPanier(Set<Client> clients) {
-		for(Client c:clients) {
-			System.out.println("client " + c.getId()  + " (" + c.getPrenom() + " " + c.getNom() + ")";
-			for(c.)
-		}
-	}*/
 }

@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import produit.Produit;
 import promo.PromoAdherent;
 
+/**
+ * Représente la catégorie client
+ * @author jeanbadie
+ *
+ */
 
 public class Adherents extends CatClient {
 	private static int seuil = 100;
@@ -14,6 +19,10 @@ public class Adherents extends CatClient {
 	
 	private int points;
 	
+	/**
+	 * Constructeur
+	 * @param nom
+	 */
 	private Adherents(String nom) {
 		super(nom, "Personnes ayant adhérées au site, elles cumulent des points pour bénéficier de reductions.");
 		points = 0;		
@@ -23,6 +32,7 @@ public class Adherents extends CatClient {
 		return new Adherents("adherent n°" + nbAdherent++);
 	}
 	
+	@Override
 	public float calculReduc(Produit p) {
 		int i=0;
 			i = sesPromos.indexOf(p);
@@ -30,23 +40,26 @@ public class Adherents extends CatClient {
 				return sesPromos.get(i).calculerReduc();
 		return 0;
 	}
-	/*public float calculReduc(Produit p) {
-		float reduc = 0;
-		
-		if(points >= seuil){
-			reduc+= rabais;
-		}
-		
-		return reduc;
-	}*/
 	
+	/**
+	 * ajoute des points à l'adhérent
+	 * @param points
+	 */
 	public void ajouterPoints(int points){ 
 		this.points += points;
 	}
+	
+	/**
+	 * Consomme les points de l'adhérent
+	 */
 	public void consommerPoints(){
 		this.points -= seuil;
 	}
 	
+	/**
+	 * Retourne la valeur du rabais obtenu par les points
+	 * @return
+	 */
 	public float getRabaisActu() {return points>=seuil?rabais:0;}
 	
 	public String toString(){
@@ -58,11 +71,13 @@ public class Adherents extends CatClient {
 		
 		return msg.toString();
 	}
+	
+	/* ************************
+	 * GETTER & SETTER
+	 ************************ */
 	public int getPoints(){return points;}
 	public void setPoints(int points){this.points = points;}
 	public int getSeuil() {return seuil;}
-	
-	
 	
 	public static void removePromo(PromoAdherent promo) { sesPromos.remove(promo); }
 	public static void addPromo(PromoAdherent promo) { sesPromos.add(promo); }

@@ -3,10 +3,19 @@ package courses;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * Alertes sur le Prix d'un panier, affiche si le prix du panier dépasse une valeur donnée
+ * @author BADIE & BLOIS
+ *
+ */
 public class AlertesPrixPanier implements Observer{
 
 	private float seuil;
 	
+	/**
+	 * Construteur
+	 * @param s
+	 */
 	public AlertesPrixPanier(float s) {
 		seuil=s;
 	}
@@ -20,7 +29,6 @@ public class AlertesPrixPanier implements Observer{
 						p.getMontantSsReduc() + ", reduc: " + p.getTotalReducPanier() + ")");
 			}
 		}catch(ClassCastException e) {
-			//System.err.println("L'objet observe n'est pas du bon type");
 			o.deleteObserver(this); // si l'objet observé ne correspond pas au type attendu, on retire l'observeur de la liste des observeurs 
 		}
 	}

@@ -5,10 +5,21 @@ import java.util.Observer;
 
 import produit.Produit;
 
+/**
+ * Controle le nombre d'occurence d'un produit dans les paniers, affiche si le produit et 
+ * selectionné un nombre de fois donné
+ * @author BADIE & BLOIS
+ *
+ */
 public class AlerteQtePdt implements Observer {
 	private Produit pdt;
 	private int nb;
 	
+	/**
+	 * Constructeur
+	 * @param p
+	 * @param qte
+	 */
 	public AlerteQtePdt(Produit p, int qte) {
 		pdt=p;
 		nb=qte;
@@ -21,7 +32,6 @@ public class AlerteQtePdt implements Observer {
 			if(p.getContenuPanier().containsKey(p) && p.getContenuPanier().get(pdt)>=nb)
 				System.out.println("Alerte: plus de " + nb + " " + pdt.getNom() + "(" + pdt.getIdProduit() + ") dans un panier");
 		}catch(ClassCastException e) {
-			//System.err.println("L'objet observe n'est pas du bon type");
 			o.deleteObserver(this); // si l'objet observé ne correspond pas au type attendu, on retire l'observeur de la liste des observeurs 
 		}
 	}
