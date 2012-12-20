@@ -18,7 +18,7 @@ public class AlerteQtePdt implements Observer {
 	public void update(Observable o, Object arg) {
 		try {
 			Panier p = (Panier)o;
-			if(p.getContenuPanier().get(pdt)>=nb)
+			if(p.getContenuPanier().containsKey(p) && p.getContenuPanier().get(pdt)>=nb)
 				System.out.println("Alerte: plus de " + nb + " " + pdt.getNom() + "(" + pdt.getIdProduit() + ") dans un panier");
 		}catch(ClassCastException e) {
 			//System.err.println("L'objet observe n'est pas du bon type");
