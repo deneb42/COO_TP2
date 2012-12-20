@@ -3,8 +3,10 @@ package test;
 import java.util.ArrayList;
 
 import produit.Produit;
+import promo.GestionnairePromo;
 import client.Adherents;
 import client.Client;
+import client.Personnel;
 import exceptions.NoArticleException;
 
 public class EnsembleTest {
@@ -110,7 +112,7 @@ public class EnsembleTest {
 	
 	public static void logAdherentAvecPanier(ArrayList<Client> clients, ArrayList<Produit> produits){
 		System.out.println("------------------------------------");
-		System.out.println("Test log et conservation du panier"); // on suppose qu'il s'est connecté avant
+		System.out.println("Test log et conservation du panier pour un adherent"); // on suppose qu'il s'est connecté avant
 		Client c5= clients.get(3);
 		System.out.println(c5.toString());
 		
@@ -130,4 +132,24 @@ public class EnsembleTest {
 		c5.getSonPanier().payerPanier();
 	}
 	
+	public static void logPersonnelAvecPanier(ArrayList<Client> clients, ArrayList<Produit> produits){
+		System.out.println("------------------------------------");
+		System.out.println("Test log et conservation du panier pour un membre personnel"); 
+		Client c6= clients.get(3);
+		System.out.println(c6.toString());
+		
+		c6.getSonPanier().ajouterProduit(produits.get(4));
+		c6.getSonPanier().ajouterProduit(produits.get(7));
+		c6.getSonPanier().ajouterProduit(produits.get(5));
+		c6.getSonPanier().ajouterProduit(produits.get(2));
+		System.out.println(c6.getSonPanier().toString());
+		
+		System.out.println(GestionnairePromo.promosPersotoString());
+		c6.connexion(Personnel.getCat()); //connexion et on suppose que le client à déjà des points de cumulé
+//		((Adherents) c5.getCategorie()).ajouterPoints(100);
+		System.out.println(c6.toString());
+		System.out.println(c6.getSonPanier().toString());
+		
+		c6.getSonPanier().payerPanier();
+	}
 }

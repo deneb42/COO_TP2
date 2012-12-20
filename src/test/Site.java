@@ -28,10 +28,11 @@ public class Site {
 //		EnsembleTest.promoPersonnel(clients, produits);//vérifie le fonctionnement des promos pour le personnel
 		
 		
-	EnsembleTest.logAdherentAvecPanier(clients, produits); //test le passage d'un client simple à un adhérent 
+//		EnsembleTest.logAdherentAvecPanier(clients, produits); //test le passage d'un client simple à un adhérent 
 															//en conservant panier et recalcul des promos.
 		
-		
+		EnsembleTest.logPersonnelAvecPanier(clients, produits); //test le passage d'un client simple à un personnel 
+																//en conservant panier et recalcul des promos.
 		
 
 		
