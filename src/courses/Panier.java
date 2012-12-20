@@ -1,14 +1,17 @@
 package courses;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 import produit.Produit;
+import promo.PromoFlash;
 import client.Adherents;
 import client.Client;
 import exceptions.NoArticleException;
 
 public class Panier {
+	private static ArrayList<PromoFlash> pFlash;
 	private Client sonClient;
 	private HashMap<Produit, Integer> contenuPanier; //produit et quantité.
 	private float montantSsReduc;
@@ -100,6 +103,11 @@ public class Panier {
 		float tmp=0; 
 		totalReducPanier = 0;
 				
+		for(int i=0;i<pFlash.size();i++) {
+			totalReducPanier+=pFlash.get(i).calculerReduc()*pFlash.get(i).nbOcc(contenuPanier);
+			// si pas de reduc, nb=0 donc non prise en compte de la reduc.
+		}
+		
 		for(Entry<Produit,Integer> e:contenuPanier.entrySet()) { // calcul des promos de produit
 			tmp = sonClient.getCategorie().calculReduc(e.getKey()); // récupère une eventuelle promo de compte sur ce produit
 			if(tmp==0) { // si on n'a pas trouvé de promo (priorité des promos)
@@ -140,6 +148,9 @@ public class Panier {
 	/* ******************************
 	 * Getter et Setter
 	 ****************************** */
+	public void addPromoFlash(PromoFlash pf) { pFlash.add(pf); }
+	public void removePromoFlash(PromoFlash pf) { pFlash.remove(pf); }
+	
 	public void setContenuPanier(HashMap<Produit, Integer> contenuPanier) { this.contenuPanier = contenuPanier; }
 	public void setMontantTotal(float montantTotal) { this.montantSsReduc = montantTotal; }
 	public void setTotalReducPanier(float totalReducPanier) { this.totalReducPanier = totalReducPanier; }
@@ -147,4 +158,5 @@ public class Panier {
 	public float getMontantSsReduc() { return montantSsReduc; }
 	public float getMontantTotal() { return montantSsReduc-totalReducPanier<0?0:montantSsReduc-totalReducPanier; }
 	public float getTotalReducPanier() { return totalReducPanier; }
+	public ArrayList<PromoFlash> getPromoFlash() { return pFlash; }
 }

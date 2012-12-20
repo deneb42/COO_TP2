@@ -9,9 +9,7 @@ import exceptions.NoArticleException;
 
 public class EnsembleTest {
 	
-	public EnsembleTest() {
-	
-	}
+	public EnsembleTest() {}
 	
 	/* Test sur un panier simple */
 	public static void ajoutPanierSimple(ArrayList<Client> clients, ArrayList<Produit> produits){
@@ -27,7 +25,7 @@ public class EnsembleTest {
 		System.out.println("ajout de p1 pour doubler quantité"); // test pour doubler une quantité
 		c1.getSonPanier().ajouterProduit(produits.get(1));
 		System.out.println(c1.getSonPanier().toString());
-		System.out.println("suppression de p1");
+		System.out.println("suppression de p1"); 
 		try {
 			c1.getSonPanier().retirerProduit(produits.get(1)); //on supprime p1 présent dans le panier
 		} catch (NoArticleException e) {
