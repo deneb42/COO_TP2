@@ -1,8 +1,10 @@
 package client;
 
+import java.util.Observable;
+
 import courses.Panier;
 
-public class Client {
+public class Client extends Observable{
 	private static int nbClient=0;
 	
 	private String nom;

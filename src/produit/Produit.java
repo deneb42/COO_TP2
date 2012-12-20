@@ -58,4 +58,5 @@ public abstract class Produit {
 	public int getNbFidelite() { return nbFidelite; }
 	public Promotion getPromoPdt() { return promoPdt; }
 	public static Promotion getPromoCat() { return promoCat; }
+	
 }
