@@ -14,5 +14,14 @@ public class PromoPerso extends Promotion {
 	public float calculerReduc() {
 		return reduction * pdt.getPrix();
 	}
+	
+	public String toString() {
+		StringBuilder msg = new StringBuilder();
+		msg.append(super.toString());
+		msg.append("\n\tPromo Personnel sur le produit : ");
+		msg.append(pdt);
+		msg.append("\n");
+		return msg.toString();
+	}
 
 }

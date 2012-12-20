@@ -30,17 +30,14 @@ public class Panier {
 			int nbTmp = contenuPanier.get(p);
 			nbTmp += 1; 						//on incrémente la quantité
 			contenuPanier.put(p, nbTmp);
-			montantSsReduc += p.getPrix();
-			this.calculReduc();
-			
 		}
 		else {//sinon on ajoute juste le produit, avec une quantité à 1
-			
 			contenuPanier.put(p, 1);
-			montantSsReduc += p.getPrix();
-			this.calculReduc();
-
 		}
+		montantSsReduc += p.getPrix();
+		this.calculReduc();
+		
+			
 //		System.out.println("Mise à jour du panier : " + this.toString());
 	}
 
@@ -86,10 +83,10 @@ public class Panier {
 		return msg.toString();
 	}
 	
-	public void appliquerReduc(float valeur){
+	/*public void appliquerReduc(float valeur){
 		montantSsReduc -= valeur;
 		totalReducPanier += valeur;
-	}
+	}*/
 	
 	public int calculGainPoint(){
 		int totalPt = 0;
@@ -100,8 +97,9 @@ public class Panier {
 	}
 	
 	public float calculReduc() {
-		float totalReducPanier = 0, tmp=0;
-		
+		float tmp=0; 
+		totalReducPanier = 0;
+				
 		for(Entry<Produit,Integer> e:contenuPanier.entrySet()) { // calcul des promos de produit
 			tmp = sonClient.getCategorie().calculReduc(e.getKey()); // récupère une eventuelle promo de compte sur ce produit
 			if(tmp==0) { // si on n'a pas trouvé de promo (priorité des promos)
@@ -110,8 +108,9 @@ public class Panier {
 			totalReducPanier+=tmp;
 		}
 		try{
-			totalReducPanier+=((Adherents)sonClient.getCategorie()).getRabaisActu();
+			totalReducPanier += ((Adherents)sonClient.getCategorie()).getRabaisActu();
 		}catch(ClassCastException e) {}
+		
 		
 		return totalReducPanier;
 	}
@@ -146,6 +145,6 @@ public class Panier {
 	public void setTotalReducPanier(float totalReducPanier) { this.totalReducPanier = totalReducPanier; }
 	public HashMap<Produit, Integer> getContenuPanier() { return contenuPanier; }
 	public float getMontantSsReduc() { return montantSsReduc; }
-	public float getMontantTotal() { return montantSsReduc-totalReducPanier; }
+	public float getMontantTotal() { return montantSsReduc-totalReducPanier<0?0:montantSsReduc-totalReducPanier; }
 	public float getTotalReducPanier() { return totalReducPanier; }
 }

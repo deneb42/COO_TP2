@@ -1,16 +1,17 @@
 package produit;
 
+import promo.PromoProduit;
 import promo.Promotion;
 
 public abstract class Produit {
 	private static int nbProduit=0;
-	protected static Promotion promoCat;
+	protected static PromoProduit promoCat;
 	
 	protected int idProduit;
 	protected float prix;
 	protected String nom;
 	protected int nbFidelite;
-	protected Promotion promoPdt;
+	protected PromoProduit promoPdt;
 	
 	protected Produit() {}
 	protected Produit(float p, String n, int nf) {
@@ -43,14 +44,15 @@ public abstract class Produit {
 		if(promoPdt!= null)
 			reduc = promoPdt.calculerReduc();
 		
-		if(promoCat!=null && promoPdt.calculerReduc()>reduc)
-			reduc = promoPdt.calculerReduc();
-		
+		if(promoCat!=null){
+			if(promoCat.calculerReduc()>reduc)
+				reduc = promoCat.calculerReduc();
+		}
 		return reduc;
 	}
 	
-	public void setPromoPdt(Promotion p) { promoPdt = p; }
-	public static void setPromoCat(Promotion p) { promoCat = p; }
+	public void setPromoPdt(PromoProduit p) { promoPdt = p; }
+	public void setPromoCat(PromoProduit p) { promoCat = p; }
 	
 	public int getIdProduit() { return idProduit; }
 	public float getPrix() { return prix; }

@@ -18,7 +18,18 @@ public class PromoFlash extends Promotion {
 		return reduction;
 	}
 
-	
+	public String toString() {
+		StringBuilder msg = new StringBuilder();
+		msg.append(super.toString());
+		msg.append("\nPromo Flash sur les produits : ");
+		
+		for(Produit p : pdtsCible){
+			msg.append(p);
+			msg.append("\n");	
+		}
+		msg.append("\n");		
+		return msg.toString();
+	}
 	
 	
 

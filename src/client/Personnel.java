@@ -8,7 +8,7 @@ import promo.PromoPerso;
 public class Personnel extends CatClient {
 
 	private static Personnel singleton;
-	private static ArrayList<PromoPerso> sesPromos;
+	private static ArrayList<PromoPerso> sesPromos = new ArrayList<PromoPerso>();
 	
 	private Personnel(String nom) {
 		super(nom);

@@ -9,11 +9,11 @@ import client.Personnel;
 public class GestionnairePromo {
 	
 	public static void ajouterPromoAdherent(PromoAdherent promo){
-		//ToDo
+		Adherents.addPromo(promo);
 	}
 	
 	public static void retirerPromoAdherent(PromoAdherent promo){
-		//ToDo
+		Adherents.removePromo(promo);
 	}
 
 	public static void ajouterPromoPerso(PromoPerso promo){
@@ -31,18 +31,62 @@ public class GestionnairePromo {
 		prod.setPromoPdt(null);
 	}
 	
+	public static void modifierPromoCat(Produit prod, PromoProduit promo){
+		prod.setPromoCat(promo);
+	}
+	
+	public static void supprimerPomoCat(Produit prod){
+		prod.setPromoCat(null);
+	}
+	
+// et promoFlash
+		
+	
+	/* **********************************************
+	 * Affichage des listes de promos
+	 * ********************************************* */
+	
 	public static void affichePromos(ArrayList<Produit> produits){
+		System.out.println("--- Listes des promotions ---");
+		
+		System.out.println(promosPersotoString());
+		System.out.println(promosAdherenttoString());
+		System.out.println(PromosProduits(produits));
+//		System.out.println();
+	}
+	
+	public static String promosPersotoString(){
+		StringBuilder msg = new StringBuilder();
+		msg.append("- Promos personnel -\n");
 		for(PromoPerso p : Personnel.getPromos()){
-			System.out.println(p.toString());
-		}
-		for(PromoAdherent p : Adherents.getPromos()){
-			System.out.println(p.toString());
-		}
-		for(Produit prod : produits){
-			System.out.println(prod.getPromoPdt().toString());
+			msg.append(p.toString());
+			msg.append("\n");
 		}
 		
-		//ToDo promosFlash
+		return msg.toString();
+	}
+	public static String promosAdherenttoString(){
+		StringBuilder msg = new StringBuilder();
+		msg.append("- Promos adherent -\n");
+		for(PromoAdherent p : Adherents.getPromos()){
+			msg.append(p.toString());
+			msg.append("\n");
+		}
+		return msg.toString();
 		
 	}
+	
+	public static String PromosProduits(ArrayList<Produit> produits){
+		StringBuilder msg = new StringBuilder();
+		msg.append("- Promos produits -\n");
+		for(Produit prod : produits){
+			if(prod.getPromoPdt() != null){
+				msg.append(prod.getPromoPdt().toString());
+				msg.append("\n");
+			}
+		}
+		return msg.toString();
+		
+	}
+			
 }
