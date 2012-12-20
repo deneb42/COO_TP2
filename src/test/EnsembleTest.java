@@ -181,4 +181,22 @@ public class EnsembleTest {
 		
 		c.getSonPanier().payerPanier();
 	}
+	
+	/* Test sur un panier simple */
+	public static void promoCatProduit(ArrayList<Client> clients, ArrayList<Produit> produits){
+		
+		Client c1 = clients.get(0);
+		System.out.println(c1.toString()); // on affiche le client sélectionné
+		System.out.println("ajout de p2");
+		c1.getSonPanier().ajouterProduit(produits.get(2)); // on ajoute le 2eme produit
+		System.out.println(c1.getSonPanier().toString());
+		
+		System.out.println("ajout de p1"); // test pour doubler une quantité
+		c1.getSonPanier().ajouterProduit(produits.get(1));
+		System.out.println(c1.getSonPanier().toString());
+		
+		System.out.println("ajout de p2 pour tester la promo *2");
+		c1.getSonPanier().ajouterProduit(produits.get(2)); // on ajoute le 2eme produit
+		System.out.println(c1.getSonPanier().toString());
+	}
 }

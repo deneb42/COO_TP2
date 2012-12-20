@@ -17,7 +17,6 @@ public abstract class CatClient {
 	
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
-		//msg.append("Nom de la catégorie : ");
 		msg.append(nomCat);
 		msg.append("\nPropriétés de la catégorie : ");
 		msg.append(propCat);

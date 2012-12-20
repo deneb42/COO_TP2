@@ -3,19 +3,10 @@ package test;
 import java.util.ArrayList;
 
 import produit.Produit;
-import promo.GestionnairePromo;
 import client.Client;
 
 public class Site {
-
-	/* ********
-	 * ToDoLIST
-	 * 
-	 * check promoCat
-	 * 
-	 */
-	
-	
+		
 	/**
 	 * @param args
 	 * Classe de test du programme : va émuler le site.
@@ -30,7 +21,7 @@ public class Site {
 
 		/* *********************************** */
 		
-		GestionnairePromo.affichePromos(produits);
+//		GestionnairePromo.affichePromos(produits);
 		
 //		EnsembleTest.ajoutPanierSimple(clients, produits); //Test des ajouts et suppression simple dans le panier.
 		
@@ -47,7 +38,9 @@ public class Site {
 //		EnsembleTest.logPersonnelAvecPanier(clients, produits); //test le passage d'un client simple à un personnel 
 																//en conservant panier et recalcul des promos.
 		
-		EnsembleTest.testCondPromoFlashReunies(clients, produits); //test avec les conditions d'une promo flash réunie.
+		EnsembleTest.promoCatProduit(clients, produits); // test sur les conditions de promo catégorie
+		
+//		EnsembleTest.testCondPromoFlashReunies(clients, produits); //test avec les conditions d'une promo flash réunie.
 		
 	}
 

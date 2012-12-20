@@ -114,7 +114,7 @@ public class Panier extends Observable {
 		for(Entry<Produit,Integer> e:contenuPanier.entrySet()) { // calcul des promos de produit
 			tmp = sonClient.getCategorie().calculReduc(e.getKey()); // récupère une eventuelle promo de compte sur ce produit
 			if(tmp==0) { // si on n'a pas trouvé de promo (priorité des promos)
-				tmp+=e.getKey().calculReduc();
+				tmp+=e.getKey().calculReduc()*e.getValue();
 			}
 			totalReducPanier+=tmp;
 		}
