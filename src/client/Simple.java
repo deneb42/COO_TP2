@@ -1,7 +1,11 @@
 package client;
 
 import produit.Produit;
-
+/**
+ * 
+ * @author BADIE & BLOIS
+ *
+ */
 public class Simple extends CatClient {
 
 	private static Simple singleton;
