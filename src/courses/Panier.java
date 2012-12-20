@@ -40,8 +40,8 @@ public class Panier extends Observable {
 		}
 		montantSsReduc += p.getPrix();
 		this.calculReduc();
-		
-			
+		setChanged();
+		notifyObservers();
 //		System.out.println("Mise à jour du panier : " + this.toString());
 	}
 
@@ -62,6 +62,8 @@ public class Panier extends Observable {
 		}
 		else throw new NoArticleException("le panier ne contient pas cet article");	
 //		System.out.println("Mise à jour du panier : " + this.toString());
+		setChanged();
+		notifyObservers();
 	}
 	
 	public String toString() {

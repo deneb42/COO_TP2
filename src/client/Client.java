@@ -2,6 +2,7 @@ package client;
 
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Set;
 
 import courses.Panier;
 
@@ -16,6 +17,14 @@ public class Client extends Observable{
 	private CatClient categorie;
 	private Panier sonPanier;
 	
+	public Client(String nom, String prenom, String email, String telephone, CatClient cat, Set<Observer> obs) {
+		this(nom, prenom, email, telephone, cat);
+		for(Observer o:obs) {
+			addObserver(o);
+			sonPanier.addObserver(o);
+		}
+	}
+	
 	public Client(String nom, String prenom, String email, String telephone, CatClient cat) {
 		this.nom = nom;
 		this.prenom = prenom;
@@ -27,10 +36,14 @@ public class Client extends Observable{
 	}
 	
 	public void connexion(CatClient cat){
+		setChanged();
+		notifyObservers();
 		categorie = cat;
 		sonPanier.calculReduc();
 	}
 	public void deconnexion(){
+		setChanged();
+		notifyObservers();
 		categorie = Simple.getCat();
 	}
 

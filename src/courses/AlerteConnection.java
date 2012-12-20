@@ -14,10 +14,15 @@ public class AlerteConnection implements Observer {
 	public void update(Observable o, Object arg) {
 		try {
 			Client c = (Client)o;
-			System.out.println("Alerte: le client " + c.getId() + "(" + c.getPrenom() + " " + c.getNom() + ") s'est connecte a " + new Date());
+			System.out.println("Alerte: le client " + c.getId() + " (" + c.getPrenom() + " " + c.getNom() + ") s'est (de)connecte a " + new Date());
 		}catch(ClassCastException e) {
-			System.err.println("L'objet observe n'est pas du bon type");
+			o.deleteObserver(this); // si l'objet observé ne correspond pas au type attendu, on retire l'observeur de la liste des observeurs 
+			//System.err.println("L'objet observe n'est pas du bon type");
 		}
+	}
+	
+	public String toString() {
+		return "Alerte de connection";
 	}
 }
 	

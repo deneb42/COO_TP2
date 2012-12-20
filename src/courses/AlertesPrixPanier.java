@@ -20,8 +20,12 @@ public class AlertesPrixPanier implements Observer{
 						p.getMontantSsReduc() + ", reduc: " + p.getTotalReducPanier() + ")");
 			}
 		}catch(ClassCastException e) {
-			System.err.println("L'objet observe n'est pas du bon type");
+			//System.err.println("L'objet observe n'est pas du bon type");
+			o.deleteObserver(this); // si l'objet observé ne correspond pas au type attendu, on retire l'observeur de la liste des observeurs 
 		}
 	}
-
+	
+	public String toString() {
+		return "Alerte de prix du panier, seuil: " + seuil;
+	}
 }
