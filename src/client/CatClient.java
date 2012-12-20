@@ -6,9 +6,7 @@ import produit.Produit;
  * Classe abstraite représentant une catégorie de client.
  * @author BADIÉ & BLOIS
  */
-
 public abstract class CatClient {
-	
 	private String nomCat;
 	private String propCat;
 	
@@ -21,13 +19,13 @@ public abstract class CatClient {
 		this.nomCat = nomCat;
 		this.propCat = propCat;
 	}
+	
 	/**
 	 * Permet de calculer les reductions en fonction de la categorie
 	 * @param p
 	 * @return
 	 */
 	public abstract float calculReduc(Produit p);
-	
 
 	public String toString() {
 		StringBuilder msg = new StringBuilder();

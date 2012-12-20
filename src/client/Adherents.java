@@ -10,11 +10,10 @@ import promo.PromoAdherent;
  * @author jeanbadie
  *
  */
-
 public class Adherents extends CatClient {
 	private static int seuil = 100;
 	private static float rabais = 20;
-	private static int nbAdherent=0;
+	private static int nbAdherent=0; // pour l'auto-increment
 	private static ArrayList<PromoAdherent> sesPromos = new ArrayList<PromoAdherent>();;
 	
 	private int points;
@@ -27,17 +26,15 @@ public class Adherents extends CatClient {
 		super(nom, "Personnes ayant adhérées au site, elles cumulent des points pour bénéficier de reductions.");
 		points = 0;		
 	}
-	
-	static public CatClient getCat() {
+	static public CatClient getCat() { // remplace l'appel au constructeur pour etre compatible avec les singletons (Personnel...)
 		return new Adherents("adherent n°" + nbAdherent++);
 	}
 	
 	@Override
 	public float calculReduc(Produit p) {
-		int i=0;
-			i = sesPromos.indexOf(p);
-			if(i!=-1)
-				return sesPromos.get(i).calculerReduc();
+		int i = sesPromos.indexOf(p);
+		if(i!=-1)
+			return sesPromos.get(i).calculerReduc();
 		return 0;
 	}
 	
@@ -62,11 +59,12 @@ public class Adherents extends CatClient {
 	 */
 	public float getRabaisActu() {return points>=seuil?rabais:0;}
 	
+	@Override
 	public String toString(){
 		StringBuilder msg = new StringBuilder();
 		msg.append(super.toString());
 		msg.append("\nNombre de points cumulés : ");
-		msg.append(points);
+		msg.append(this.points);
 		msg.append("\n");
 		
 		return msg.toString();
@@ -75,7 +73,7 @@ public class Adherents extends CatClient {
 	/* ************************
 	 * GETTER & SETTER
 	 ************************ */
-	public int getPoints(){return points;}
+	public int getPoints(){return this.points;}
 	public void setPoints(int points){this.points = points;}
 	public int getSeuil() {return seuil;}
 	

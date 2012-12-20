@@ -2,13 +2,11 @@ package test;
 
 import java.util.ArrayList;
 
-import courses.AlerteConnection;
-import courses.AlerteQtePdt;
-import courses.AlertePrixPanier;
-import courses.GestionnaireAlertes;
-
 import produit.Produit;
 import client.Client;
+import courses.AlerteConnection;
+import courses.AlerteQtePdt;
+import courses.GestionnaireAlertes;
 
 /**
  * Classe de création des alertes

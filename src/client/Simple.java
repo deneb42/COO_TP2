@@ -1,6 +1,7 @@
 package client;
 
 import produit.Produit;
+
 /**
  * 
  * @author BADIE & BLOIS
@@ -9,7 +10,6 @@ import produit.Produit;
  *
  */
 public class Simple extends CatClient {
-
 	private static Simple singleton;
 	
 	/**
@@ -19,6 +19,7 @@ public class Simple extends CatClient {
 	private Simple(String nom) {
 		super(nom, "Personne visitant le site exceptionnellement, ne bénéficient pas du cumul des points.");
 	}
+	
 	/**
 	 * Retourne la categorie
 	 * @return
@@ -33,9 +34,8 @@ public class Simple extends CatClient {
 	/**
 	 * Calcul la reduction spécifique à cette categorie
 	 */
+	@Override
 	public float calculReduc(Produit p) {	
 		return 0;
 	}
-
-
 }
