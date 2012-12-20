@@ -152,4 +152,34 @@ public class EnsembleTest {
 		
 		c6.getSonPanier().payerPanier();
 	}
+	
+	public static void testCondPromoFlashReunies(ArrayList<Client> clients, ArrayList<Produit> produits){
+		
+		System.out.println(GestionnairePromo.PromosFlashtoString(produits));
+		
+		System.out.println("------------------------------------");
+		System.out.println("Test dans le conditions de le Promo Flash LaPointe pour un client visiteur"); 
+		Client c= clients.get(3);
+		System.out.println(c.toString());
+		
+		c.getSonPanier().ajouterProduit(produits.get(0));
+		c.getSonPanier().ajouterProduit(produits.get(5));
+		
+		System.out.println(c.getSonPanier().toString());
+		
+		c.getSonPanier().payerPanier();
+		
+		System.out.println("\n------------------------------------");
+		System.out.println("Test dans le conditions de le Promo Flash Tri Yann pour un client visiteur"); 
+		c= clients.get(3);
+		System.out.println(c.toString());
+		
+		c.getSonPanier().ajouterProduit(produits.get(3));
+		c.getSonPanier().ajouterProduit(produits.get(3));
+		c.getSonPanier().ajouterProduit(produits.get(3));
+		
+		System.out.println(c.getSonPanier().toString());
+		
+		c.getSonPanier().payerPanier();
+	}
 }
