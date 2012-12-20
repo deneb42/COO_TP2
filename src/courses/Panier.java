@@ -16,9 +16,9 @@ import exceptions.NoArticleException;
  * @author BADIE & BLOIS
  *
  */
-
 public class Panier extends Observable {
 	private static ArrayList<PromoFlash> pFlash = new ArrayList<PromoFlash>();
+	
 	private Client sonClient;
 	private HashMap<Produit, Integer> contenuPanier; //produit et quantité.
 	private float montantSsReduc;
@@ -83,12 +83,13 @@ public class Panier extends Observable {
 				montantSsReduc -= p.getPrix();
 				this.calculReduc();
 			}
+			setChanged();
+			notifyObservers();
 		}
 		else throw new NoArticleException("le panier ne contient pas cet article");	
-		setChanged();
-		notifyObservers();
 	}
 	
+	@Override
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
 		
@@ -107,7 +108,6 @@ public class Panier extends Observable {
 		msg.append("\nMontant total apres reductions : ");
 		msg.append(getMontantTotal());
 		msg.append("\n--------------------------------------------------\n");
-			
 		
 		return msg.toString();
 	}

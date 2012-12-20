@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import produit.Produit;
 import client.Client;
 import courses.AlerteConnection;
+import courses.AlertePrixPanier;
 import courses.AlerteQtePdt;
 import courses.GestionnaireAlertes;
 

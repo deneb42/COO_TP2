@@ -11,14 +11,12 @@ import client.Client;
  * @author BADIE & BLOIS
  *
  */
-
 public class AlerteConnection implements Observer {
 	
 	/**
 	 * Constructeur
 	 */
 	public AlerteConnection () {} // possibilité d'ajouter une contrainte d'heure
-	
 	
 	@Override
 	public void update(Observable o, Object arg) {

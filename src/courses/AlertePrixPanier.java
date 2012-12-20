@@ -9,7 +9,6 @@ import java.util.Observer;
  *
  */
 public class AlertePrixPanier implements Observer{
-
 	private float seuil;
 	
 	/**
