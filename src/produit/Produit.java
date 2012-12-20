@@ -3,6 +3,11 @@ package produit;
 import promo.PromoProduit;
 import promo.Promotion;
 
+/**
+ * Classe abstraite représentant un produit
+ * @author BADIE & BLOIS
+ *
+ */
 public abstract class Produit {
 	private static int nbProduit=0;
 	protected static PromoProduit promoCat;
@@ -13,7 +18,17 @@ public abstract class Produit {
 	protected int nbFidelite;
 	protected PromoProduit promoPdt;
 	
+	/**
+	 * Constructeur par defaut
+	 */
 	protected Produit() {}
+	
+	/**
+	 * Constructeur
+	 * @param p
+	 * @param n
+	 * @param nf
+	 */
 	protected Produit(float p, String n, int nf) {
 		idProduit=nbProduit++;
 		prix = p;
@@ -25,6 +40,10 @@ public abstract class Produit {
 		return "Produit n°" + idProduit + " " + nom;
 	}
 	
+	/**
+	 * redéfinition de la methode equals
+	 */
+	@Override
 	public boolean equals(Object o) {
 		if(o==null)
 			return false;
@@ -39,11 +58,14 @@ public abstract class Produit {
 		} 
 	}
 	
+	/**
+	 * Calcule la reduction possible de promoProduit
+	 * @return
+	 */
 	public float calculReduc() {
 		float reduc=0;
 		if(promoPdt!= null)
 			reduc = promoPdt.calculerReduc();
-		
 		if(promoCat!=null){
 			if(promoCat.calculerReduc()>reduc)
 				reduc = promoCat.calculerReduc();

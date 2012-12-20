@@ -9,16 +9,17 @@ import produit.Livre;
 import produit.Produit;
 import produit.Spectacle;
 
+/**
+ * Classe qui initialise l'ensemble des Produits
+ * @author BADIE & BLOIS
+ *
+ */
 public class TestProduit {
 
-	public static void main(String args[]) {
-		ArrayList<Produit> p = populeProduits();
-		
-		for(Produit pitiP:p) {
-			System.out.println(pitiP.toString());
-		}
-	}
-	
+	/**
+	 * Initialisation des Produits
+	 * @return
+	 */
 	public static ArrayList<Produit> populeProduits() {
 		ArrayList<Produit> p = new ArrayList<Produit>();
 		

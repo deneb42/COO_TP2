@@ -9,9 +9,12 @@ import client.Client;
 import client.Personnel;
 import exceptions.NoArticleException;
 
+/**
+ * Classe contenant l'ensemble des Tests que nous avons passé
+ * @author BADIE & BLOIS
+ *
+ */
 public class EnsembleTest {
-	
-	public EnsembleTest() {}
 	
 	/* Test sur un panier simple */
 	public static void ajoutPanierSimple(ArrayList<Client> clients, ArrayList<Produit> produits){
@@ -48,7 +51,6 @@ public class EnsembleTest {
 	/* Test d'Opération sur les clients */
 	
 	public static void operationsClients(ArrayList<Client> clients, ArrayList<Produit> produits){
-		System.out.println("------------------------------------");
 		System.out.println("Opérations sur un client");
 		Client c2 = clients.get(3);
 		System.out.println(c2.toString());
@@ -64,8 +66,6 @@ public class EnsembleTest {
 	/* Test sur les promos d'adhérents */
 	
 	public static void promoAdherents(ArrayList<Client> clients, ArrayList<Produit> produits){
-		
-		System.out.println("------------------------------------");
 		System.out.println("Test promos adhérents : sélection d'un client adhérents sans points"); // on suppose qu'il s'est connecté avant
 		Client c3 = clients.get(2);
 		System.out.println(c3.toString());
@@ -93,7 +93,6 @@ public class EnsembleTest {
 	
 	/* Test sur les promos Personnel */
 	public static void promoPersonnel(ArrayList<Client> clients, ArrayList<Produit> produits){
-		System.out.println("------------------------------------");
 		System.out.println("Test promos personnel : sélection d'un membre du personnel"); // on suppose qu'il s'est connecté avant
 		Client c4 = clients.get(0);
 		System.out.println(c4.toString());
@@ -111,7 +110,6 @@ public class EnsembleTest {
 	/* Test le passage d'un client anonyme à un adhérent en conservant le panier => calcul de nouvelle réduc */
 	
 	public static void logAdherentAvecPanier(ArrayList<Client> clients, ArrayList<Produit> produits){
-		System.out.println("------------------------------------");
 		System.out.println("Test log et conservation du panier pour un adherent"); // on suppose qu'il s'est connecté avant
 		Client c5= clients.get(3);
 		System.out.println(c5.toString());
@@ -125,7 +123,6 @@ public class EnsembleTest {
 		Adherents ad = (Adherents) Adherents.getCat(); //ce n'est pas le fonctionnement normal mais pour le test
 		ad.setPoints(100);							//c'est nécessaire normalement on aurait accédé à un BD.
 		c5.connexion(ad); //connexion et on suppose que le client à déjà des points de cumulé
-//		((Adherents) c5.getCategorie()).ajouterPoints(100);
 		System.out.println(c5.toString());
 		System.out.println(c5.getSonPanier().toString());
 		
@@ -133,7 +130,6 @@ public class EnsembleTest {
 	}
 	
 	public static void logPersonnelAvecPanier(ArrayList<Client> clients, ArrayList<Produit> produits){
-		System.out.println("------------------------------------");
 		System.out.println("Test log et conservation du panier pour un membre personnel"); 
 		Client c6= clients.get(3);
 		System.out.println(c6.toString());
@@ -146,7 +142,6 @@ public class EnsembleTest {
 		
 		System.out.println(GestionnairePromo.promosPersotoString());
 		c6.connexion(Personnel.getCat()); //connexion et on suppose que le client à déjà des points de cumulé
-//		((Adherents) c5.getCategorie()).ajouterPoints(100);
 		System.out.println(c6.toString());
 		System.out.println(c6.getSonPanier().toString());
 		
@@ -155,8 +150,6 @@ public class EnsembleTest {
 	
 	public static void testCondPromoFlashReunies(ArrayList<Client> clients, ArrayList<Produit> produits){
 		
-			
-		System.out.println("------------------------------------");
 		System.out.println("Test dans le conditions de le Promo Flash LaPointe pour un client visiteur"); 
 		Client c= clients.get(3);
 		System.out.println(c.toString());

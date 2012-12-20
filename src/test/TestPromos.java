@@ -10,8 +10,17 @@ import promo.PromoFlash;
 import promo.PromoPerso;
 import promo.PromoProduit;
 
+/**
+ * Classe d'initialisation des Promos
+ * @author BADIE & BLOIS
+ *
+ */
 public class TestPromos {
 
+	/**
+	 * Créer les différents produits
+	 * @param produits
+	 */
 	public static void creerPromos(ArrayList<Produit> produits){
 		
 		/* Creation de promos pour le personnel */
@@ -32,6 +41,7 @@ public class TestPromos {
 		GestionnairePromo.ajouterPromoProduit(produits.get(2), new PromoProduit("PromoProd 2", 0.3f));
 		GestionnairePromo.ajouterPromoProduit(produits.get(7), new PromoProduit("PromoProd 3", 0.1f));
 		
+		// Promo Categorie
 		GestionnairePromo.modifierPromoCat(produits.get(2), new PromoProduit("PromoCat1", 0.3f));
 		
 		/* Création de promos flash */
@@ -42,8 +52,5 @@ public class TestPromos {
 		hashTmp.clear();
 		hashTmp.put(produits.get(3), 3);
 		GestionnairePromo.ajouterPromoFlash(new PromoFlash("promoFlash Tri Yann", 20f, hashTmp));
-		
-		
-//	GestionnairePromo.affichePromos(produits);
 	}
 }
