@@ -15,10 +15,8 @@ public class Adherents extends CatClient {
 	private int points;
 	
 	private Adherents(String nom) {
-		super(nom);
-		points = 0;
-		propCat = "Personnes ayant adhérées au site, elles cumulent des points pour bénéficier de reductions.";
-		
+		super(nom, "Personnes ayant adhérées au site, elles cumulent des points pour bénéficier de reductions.");
+		points = 0;		
 	}
 	
 	static public CatClient getCat() {
