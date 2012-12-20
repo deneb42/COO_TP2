@@ -1,9 +1,19 @@
 package promo;
 
+/**
+ * Promotion appliqué à un produit
+ * @author BADIE & BLOIS
+ *
+ */
 public class PromoProduit extends Promotion {
 
 	protected float reduc ;
 	
+	/**
+	 * Constructeur
+	 * @param name
+	 * @param r
+	 */
 	public PromoProduit(String name, float r) {
 		super(name, r);
 		this.reduc = r;
@@ -17,7 +27,6 @@ public class PromoProduit extends Promotion {
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
 		msg.append(super.toString());
-//		msg.append("\nPromo Produit");
 		msg.append("\n");
 		return msg.toString();
 	}

@@ -7,16 +7,17 @@ import client.Client;
 import client.Personnel;
 import client.Simple;
 
+/**
+ * Classe de création des clients
+ * @author BADIE & BLOIS
+ *
+ */
 public class TestClient {
-	
-	public static void main(String args[]) {
-		ArrayList<Client> c = populeClient();
-		
-		for(Client itp:c){
-			System.out.println(itp.toString());
-		}
-	}
-	
+
+	/**
+	 * Initialisation des lcients
+	 * @return
+	 */
 	public static ArrayList<Client> populeClient() {
 		ArrayList<Client> c = new ArrayList<Client>();
 		c.add(new Client("Blois", "Benjamin", "benjblois@gmail.com", "0607080910", Personnel.getCat()));

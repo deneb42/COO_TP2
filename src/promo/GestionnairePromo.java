@@ -7,7 +7,13 @@ import client.Adherents;
 import client.Personnel;
 import courses.Panier;
 
+/**
+ * Classe static qui permet d'implémenter facilement tous les types de promo
+ * @author BADIE & BLOIS
+ *
+ */
 public class GestionnairePromo {
+	
 	
 	public static void ajouterPromoAdherent(PromoAdherent promo){
 		Adherents.addPromo(promo);

@@ -1,6 +1,10 @@
 package promo;
 
-
+/**
+ * Classe abstraite représentant les promotion
+ * @author BADIE & BLOIS
+ *
+ */
 public abstract class Promotion {
 	protected static int nbPromo=0;
 	
@@ -8,13 +12,21 @@ public abstract class Promotion {
 	protected String nom;
 	protected float reduction;
 	
+	/**
+	 * Constructeur
+	 * @param name
+	 * @param red
+	 */
 	protected Promotion(String name, float red) {
 		this.nom = name;
 		this.id  = nbPromo++;
-		this.reduction = red;
-		
+		this.reduction = red;	
 	}
 	
+	/**
+	 * Redefinition de la méthode equals
+	 */
+	@Override
 	public boolean equals(Object o) {
 		if(o==null)
 			return false;
@@ -29,6 +41,10 @@ public abstract class Promotion {
 		} 
 	}
 	
+	/**
+	 * Permet de calculer des reductions par le biais des promotions
+	 * @return
+	 */
 	public abstract float calculerReduc();
 	
 	public String toString(){

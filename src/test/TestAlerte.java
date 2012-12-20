@@ -10,9 +10,19 @@ import courses.GestionnaireAlertes;
 import produit.Produit;
 import client.Client;
 
+/**
+ * Classe de création des alertes
+ * @author BADIE & BLOIS
+ *
+ */
 public class TestAlerte {
 	
-public static void creerAlertes(ArrayList<Produit> produits, ArrayList<Client> clients){
+	/**
+	 * Initialisation des Alertes
+	 * @param produits
+	 * @param clients
+	 */
+	public static void creerAlertes(ArrayList<Produit> produits, ArrayList<Client> clients){
 		
 		/* Creation de l'alerte Connection sur tous les clients*/
 		GestionnaireAlertes.ajouterObserveur(new AlerteConnection(), clients);
@@ -22,7 +32,5 @@ public static void creerAlertes(ArrayList<Produit> produits, ArrayList<Client> c
 		
 		/* creation d'une alerte surveillance montant panier */
 		GestionnaireAlertes.ajouterObserveur(new AlertesPrixPanier(1000f), clients);
-		
 	}
-
 }

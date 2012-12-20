@@ -2,9 +2,20 @@ package promo;
 
 import produit.Produit;
 
+/**
+ * Promo pour les adherents du site
+ * @author BADIE & BLOIS
+ *
+ */
 public class PromoAdherent extends Promotion {
 	private Produit pdt;
 	
+	/**
+	 * Constructeur
+	 * @param name
+	 * @param red
+	 * @param p
+	 */
 	public PromoAdherent(String name, float red, Produit p) {
 		super(name, red);
 		pdt = p;

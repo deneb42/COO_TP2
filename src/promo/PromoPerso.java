@@ -2,9 +2,20 @@ package promo;
 
 import produit.Produit;
 
+/**
+ * Promotion appliquée aux membres du personnel.
+ * @author BADIE & BLOIS
+ *
+ */
 public class PromoPerso extends Promotion {
 	private Produit pdt;
 	
+	/**
+	 * constructeur
+	 * @param name
+	 * @param red
+	 * @param p
+	 */
 	public PromoPerso(String name, float red, Produit p) {//ici reduction est un pourcentage et dooit donc etre inf à 1.
 		super(name, red);
 		pdt = p;

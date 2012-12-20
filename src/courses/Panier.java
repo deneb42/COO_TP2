@@ -22,7 +22,7 @@ public class Panier extends Observable {
 	private Client sonClient;
 	private HashMap<Produit, Integer> contenuPanier; //produit et quantité.
 	private float montantSsReduc;
-	private float totalReducPanier;
+	private float montantReducPanier;
 	
 	/**
 	 * Constructeur
@@ -32,7 +32,7 @@ public class Panier extends Observable {
 		sonClient = c;
 		contenuPanier = new HashMap<Produit, Integer>();
 		montantSsReduc = 0;
-		totalReducPanier = 0;
+		montantReducPanier = 0;
 	}
 	
 	/**
@@ -103,7 +103,7 @@ public class Panier extends Observable {
 		msg.append("\n-----\nMontant total du panier :");
 		msg.append(montantSsReduc);
 		msg.append("\nMontant des reductions : ");
-		msg.append(totalReducPanier);
+		msg.append(montantReducPanier);
 		msg.append("\nMontant total apres reductions : ");
 		msg.append(getMontantTotal());
 		msg.append("\n--------------------------------------------------\n");
@@ -130,9 +130,9 @@ public class Panier extends Observable {
 	 */
 	public float calculReduc() {
 		float tmp=0; 
-		totalReducPanier = 0;
+		montantReducPanier = 0;
 		for(int i=0;i<pFlash.size();i++) {
-			totalReducPanier+=pFlash.get(i).calculerReduc()*pFlash.get(i).nbOcc(contenuPanier);
+			montantReducPanier+=pFlash.get(i).calculerReduc()*pFlash.get(i).nbOcc(contenuPanier);
 			// si pas de reduc, nb=0 donc non prise en compte de la reduc.
 		}
 		for(Entry<Produit,Integer> e:contenuPanier.entrySet()) { // calcul des promos de produit
@@ -140,13 +140,13 @@ public class Panier extends Observable {
 			if(tmp==0) { // si on n'a pas trouvé de promo (priorité des promos)
 				tmp+=e.getKey().calculReduc();
 			}
-			totalReducPanier+=tmp;
+			montantReducPanier+=tmp;
 		}
 		try{
-			totalReducPanier += ((Adherents)sonClient.getCategorie()).getRabaisActu();
+			montantReducPanier += ((Adherents)sonClient.getCategorie()).getRabaisActu();
 		}catch(ClassCastException e) {}
 	
-		return totalReducPanier;
+		return montantReducPanier;
 	}
 	
 	/**
@@ -174,7 +174,7 @@ public class Panier extends Observable {
 	public void viderPanier(){
 		this.contenuPanier.clear();
 		this.montantSsReduc = 0;
-		this.totalReducPanier = 0;
+		this.montantReducPanier = 0;
 	}
 	
 	/* ******************************
@@ -185,10 +185,10 @@ public class Panier extends Observable {
 	
 	public void setContenuPanier(HashMap<Produit, Integer> contenuPanier) { this.contenuPanier = contenuPanier; }
 	public void setMontantTotal(float montantTotal) { this.montantSsReduc = montantTotal; }
-	public void setTotalReducPanier(float totalReducPanier) { this.totalReducPanier = totalReducPanier; }
+	public void setTotalReducPanier(float totalReducPanier) { this.montantReducPanier = totalReducPanier; }
 	public HashMap<Produit, Integer> getContenuPanier() { return contenuPanier; }
 	public float getMontantSsReduc() { return montantSsReduc; }
-	public float getMontantTotal() { return montantSsReduc-totalReducPanier<0?0:montantSsReduc-totalReducPanier; }
-	public float getTotalReducPanier() { return totalReducPanier; }
+	public float getMontantTotal() { return montantSsReduc-montantReducPanier<0?0:montantSsReduc-montantReducPanier; }
+	public float getTotalReducPanier() { return montantReducPanier; }
 	public static ArrayList<PromoFlash> getPromoFlash() { return pFlash; }
 }
