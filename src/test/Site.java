@@ -7,16 +7,25 @@ import client.Client;
 
 public class Site {
 
+	/* ********
+	 * ToDoLIST
+	 * 
+	 * check promoCat
+	 * 
+	 */
+	
+	
 	/**
 	 * @param args
 	 * Classe de test du programme : va émuler le site.
 	 */
 	public static void main(String[] args) {	
 		
-		/* Création des produits, des pomotions et des clients */
+		/* Création des produits, des promotions, et des clients */
 		ArrayList<Produit> produits = TestProduit.populeProduits();
 		TestPromos.creerPromos(produits);
-		ArrayList<Client> clients = TestClient.populeClient();		
+		ArrayList<Client> clients = TestClient.populeClient();	
+		TestAlerte.creerAlertes(produits, clients);
 		/* *********************************** */
 		
 //		EnsembleTest.ajoutPanierSimple(clients, produits); //Test des ajouts et suppression simple dans le panier.
