@@ -27,7 +27,7 @@ public class PromoFlash extends Promotion {
 	public String toString() {
 		StringBuilder msg = new StringBuilder();
 		msg.append(super.toString());
-		msg.append("\nPromo Flash sur les produits : ");
+		msg.append("Promo Flash sur les produits : \n");
 		
 		for(Entry<Produit, Integer> e : pdtsCible.entrySet()){
 			msg.append(e.getKey());

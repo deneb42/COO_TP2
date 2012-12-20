@@ -57,8 +57,8 @@ public class GestionnairePromo {
 		
 		System.out.println(promosPersotoString());
 		System.out.println(promosAdherenttoString());
-		System.out.println(PromosProduits(produits));
-//		System.out.println();
+		System.out.println(PromosProduitstoString(produits));
+		System.out.println(PromosFlashtoString(produits));
 	}
 	
 	public static String promosPersotoString(){
@@ -82,7 +82,7 @@ public class GestionnairePromo {
 		
 	}
 	
-	public static String PromosProduits(ArrayList<Produit> produits){
+	public static String PromosProduitstoString(ArrayList<Produit> produits){
 		StringBuilder msg = new StringBuilder();
 		msg.append("- Promos produits -\n");
 		for(Produit prod : produits){
@@ -94,5 +94,18 @@ public class GestionnairePromo {
 		return msg.toString();
 		
 	}
+	public static String PromosFlashtoString(ArrayList<Produit> produits){
+		StringBuilder msg = new StringBuilder();
+		msg.append("- Promos Flash -\n");
+		
+		for(PromoFlash prom : Panier.getPromoFlash()){
+			msg.append(prom.toString());
+			msg.append("\n");
+		}
+		return msg.toString();
+		
+	}
+
+	
 			
 }

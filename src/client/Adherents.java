@@ -49,6 +49,8 @@ public class Adherents extends CatClient {
 		this.points -= seuil;
 	}
 	
+	public float getRabaisActu() {return points>=seuil?rabais:0;}
+	
 	public String toString(){
 		StringBuilder msg = new StringBuilder();
 		msg.append(super.toString());
@@ -59,8 +61,9 @@ public class Adherents extends CatClient {
 		return msg.toString();
 	}
 	public int getPoints(){return points;}
+	public void setPoints(int points){this.points = points;}
 	public int getSeuil() {return seuil;}
-	public float getRabaisActu() {return points>seuil?rabais:0;}
+	
 	
 	
 	public static void removePromo(PromoAdherent promo) { sesPromos.remove(promo); }

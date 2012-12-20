@@ -12,7 +12,7 @@ import client.Client;
 import exceptions.NoArticleException;
 
 public class Panier extends Observable {
-	private static ArrayList<PromoFlash> pFlash;
+	private static ArrayList<PromoFlash> pFlash = new ArrayList<PromoFlash>();
 	private Client sonClient;
 	private HashMap<Produit, Integer> contenuPanier; //produit et quantité.
 	private float montantSsReduc;
@@ -159,5 +159,5 @@ public class Panier extends Observable {
 	public float getMontantSsReduc() { return montantSsReduc; }
 	public float getMontantTotal() { return montantSsReduc-totalReducPanier<0?0:montantSsReduc-totalReducPanier; }
 	public float getTotalReducPanier() { return totalReducPanier; }
-	public ArrayList<PromoFlash> getPromoFlash() { return pFlash; }
+	public static ArrayList<PromoFlash> getPromoFlash() { return pFlash; }
 }

@@ -23,11 +23,12 @@ public class Site {
 		
 //		EnsembleTest.operationsClients(clients, produits); // Test des modifications simple de statut des clients.
 		
-		EnsembleTest.promoAdherents(clients, produits); //vérifie le fonctionnement des promos des adhérents
+//		EnsembleTest.promoAdherents(clients, produits); //vérifie le fonctionnement des promos des adhérents
 		
 //		EnsembleTest.promoPersonnel(clients, produits);//vérifie le fonctionnement des promos pour le personnel
 		
-//		EnsembleTest.logAdherentAvecPanier(clients, produits); //test le passage d'un client simple à un adhérent 
+		
+	EnsembleTest.logAdherentAvecPanier(clients, produits); //test le passage d'un client simple à un adhérent 
 															//en conservant panier et recalcul des promos.
 		
 		

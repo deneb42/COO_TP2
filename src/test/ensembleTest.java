@@ -120,8 +120,10 @@ public class EnsembleTest {
 		c5.getSonPanier().ajouterProduit(produits.get(2));
 		System.out.println(c5.getSonPanier().toString());
 		
-		c5.connexion(Adherents.getCat()); //connexion et on suppose que le client à déjà des points de cumulé
-		((Adherents) c5.getCategorie()).ajouterPoints(100);
+		Adherents ad = (Adherents) Adherents.getCat(); //ce n'est pas le fonctionnement normal mais pour le test
+		ad.setPoints(100);							//c'est nécessaire normalement on aurait accédé à un BD.
+		c5.connexion(ad); //connexion et on suppose que le client à déjà des points de cumulé
+//		((Adherents) c5.getCategorie()).ajouterPoints(100);
 		System.out.println(c5.toString());
 		System.out.println(c5.getSonPanier().toString());
 		
